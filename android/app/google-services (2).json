@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "338938845424",
+    "project_id": "myrhapsody",
+    "storage_bucket": "myrhapsody.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338938845424:android:9e7e7a15db4e1999cd4a35",
+        "android_client_info": {
+          "package_name": "com.example.MyRhapsody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338938845424-jqlmto68cbvhim8062k8a6km7ild7sv7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.MyRhapsody",
+            "certificate_hash": "d9525005822552a40208b4f51c5e40db86473db3"
+          }
+        },
+        {
+          "client_id": "338938845424-3r3dc4r9q06234h5e1tkkmv3gt894674.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa6zpKFyk3wT9Rm4_kCi5klhX9_Nus83U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338938845424-3r3dc4r9q06234h5e1tkkmv3gt894674.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
