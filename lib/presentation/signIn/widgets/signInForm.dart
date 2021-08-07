@@ -2,7 +2,8 @@
 
 import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/presentation/signUp/signUpPage.dart';
-import 'package:MyRhapsody/repositories/blocs/signInBloc/signin_bloc.dart';
+import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
+import 'package:MyRhapsody/repositories/blocs/signInBloc/signinbloc_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
@@ -107,13 +108,13 @@ class _SignInFormState extends State<SignInForm> {
                 ),
               ),
             );
-          // Future.delayed(const Duration(seconds: 1), () {
-          //   BlocProvider.of<AuthenticationBloc>(context).add(
-          //     AuthenticationLoggedIn(),
-          //   );
-          //   Phoenix.rebirth(context);
-          //   // Navigator.pushNamed(context, '/');
-          // });
+          Future.delayed(const Duration(seconds: 1), () {
+            BlocProvider.of<AuthenticationBloc>(context).add(
+              AuthenticationLoggedIn(),
+            );
+            Phoenix.rebirth(context);
+            // Navigator.pushNamed(context, '/');
+          });
         }
       },
       child: BlocBuilder<SignInBloc, SignInState>(
@@ -195,6 +196,7 @@ class _SignInFormState extends State<SignInForm> {
                                     email: _emailController.text,
                                     password: _passwordController.text),
                               );
+                              //  Navigator.pushNamed(context, '/homePage');
                             }
                           },
                           shape: RoundedRectangleBorder(

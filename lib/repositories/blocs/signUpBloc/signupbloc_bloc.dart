@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:MyRhapsody/repositories/models/UserData/firebaseUserDataRepository.dart';
 import 'package:MyRhapsody/repositories/models/UserData/userDataModel.dart';
 import 'package:MyRhapsody/services/authService.dart';
@@ -31,9 +30,11 @@ class SignUpBloc extends Bloc<SignUpBlocEvent, SignUpBlocState> {
       yield* _mapRegisterPasswordChangedToState(event.password);
     } else if (event is RegisterSubmitted) {
       yield* _mapRegisterRegisterSubmittedToState(
-          email: event.email, password: event.password, name: event.name,
+          email: event.email,
+          password: event.password,
+          name: event.name,
           language: event.language);
-    } 
+    }
   }
 
   Stream<SignUpBlocState> _mapRegisterEmailChangedToState(String email) async* {
@@ -53,21 +54,17 @@ class SignUpBloc extends Bloc<SignUpBlocEvent, SignUpBlocState> {
       {String email, String password, String name, String language}) async* {
     yield SignUpBlocState.loading();
     try {
+      print("attempt to register");
       await _authService.registerWithEmailAndPassword(email, password, name);
-      await _firebaseUserDataRepository.addUserData(
-        UserDataModel(
-            email: email,
-            name: name,
-            language: language,
-      )
-      );
+      await _firebaseUserDataRepository.addUserData(UserDataModel(
+        email: email,
+        name: name,
+        language: language,
+      ));
       yield SignUpBlocState.success();
-    
     } catch (error) {
-    
+      print(error);
       yield SignUpBlocState.failure();
     }
   }
-
- 
 }

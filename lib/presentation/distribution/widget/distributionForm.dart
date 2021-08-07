@@ -4,58 +4,54 @@ import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpForm extends StatefulWidget {
+class DistributionForm extends StatefulWidget {
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  _DistributionFormState createState() => _DistributionFormState();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _DistributionFormState extends State<DistributionForm> {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  
   final TextEditingController _nameController = TextEditingController();
-  String language;
+  String language = "Language";
 
   bool get isPopulated =>
       _emailController.text.isNotEmpty &&
-      _passwordController.text.isNotEmpty &&
+     
       _nameController.text.isNotEmpty;
 
-  bool isButtonEnabled(SignUpBlocState state) {
+  bool isButtonEnabled(DistributionBlocState state) {
     return state.isFormValid && isPopulated && !state.isSubmitting;
   }
 
-  SignUpBloc _signUpBloc;
+  DistributionBloc distributionBloc;
   // FirstLaunchUserInfoEntryBloc _infoEntryBloc;
 
   @override
   void initState() {
     super.initState();
-    _signUpBloc = BlocProvider.of<SignUpBloc>(context);
+    distributionBloc = BlocProvider.of<DistributionBloc>(context);
     // _infoEntryBloc = BlocProvider.of<FirstLaunchUserInfoEntryBloc>(context);
     _nameController.addListener(() {
-      _signUpBloc.add(
-        RegisterNameChanged(name: _nameController.text),
+      distributionBloc.add(
+        DistributionNameChanged(name: _nameController.text),
       );
     });
 
     _emailController.addListener(() {
-      _signUpBloc.add(
-        RegisterEmailChanged(email: _emailController.text),
+      distributionBloc.add(
+        DistributionEmailChanged(email: _emailController.text),
       );
     });
 
-    _passwordController.addListener(() {
-      _signUpBloc.add(
-        RegisterPasswordChanged(password: _passwordController.text),
-      );
-    });
-  }
+    
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignUpBloc, SignUpBlocState>(
+    return BlocListener<DistributionBloc, DistributionBlocState>(
       listener: (context, state) {
         if (state.isFailure) {
           Future.delayed(const Duration(seconds: 1), () {
@@ -74,24 +70,35 @@ class _SignUpFormState extends State<SignUpForm> {
               );
           });
         } else if (state.isSubmitting) {
-          Scaffold.of(context)
-            ..removeCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: <Widget>[
-                    const Text('Registering...'),
-                    const CircularProgressIndicator(
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.redAccent),
-                    )
-                  ],
-                ),
+          Flushbar(
+              // message: "Creating Campaign!",
+              titleText: Text(
+                "Hello",
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontFamily: "HelveticaNeue"),
               ),
-            );
-          Future.delayed(const Duration(seconds: 1), () {});
+              messageText: Text(
+                "Organizing Distribution, Please wait!",
+                style: TextStyle(
+                    fontSize: 17.0,
+                    color: Colors.white,
+                    fontFamily: "HelveticaNeue"),
+              ),
+              flushbarPosition: FlushbarPosition.TOP,
+              backgroundColor: primaryColor,
+              progressIndicatorBackgroundColor: Colors.white,
+              icon: Icon(
+                Icons.hourglass_top_outlined,
+                color: Colors.white,
+              ),
+              progressIndicatorValueColor:
+                  AlwaysStoppedAnimation<Color>(secondaryColor),
+              showProgressIndicator: true,
+              duration: Duration(seconds: 3),
+            ).show(context);
+            
         } else if (state.isSuccess) {
           Scaffold.of(context)
             ..removeCurrentSnackBar()
@@ -116,7 +123,7 @@ class _SignUpFormState extends State<SignUpForm> {
           Navigator.pushNamed(context, '/');
         }
       },
-      child: BlocBuilder<SignUpBloc, SignUpBlocState>(
+      child: BlocBuilder<DistributionBloc, DistributionBlocState>(
         builder: (context, state) {
           return Container(
             padding: const EdgeInsets.symmetric(
@@ -131,7 +138,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   Column(
                     children: <Widget>[
                       const Text(
-                        'SIGN UP',
+                        'Rhapsody Distribution',
                         style: TextStyle(
                           letterSpacing: 2,
                           fontSize: 30,
@@ -152,12 +159,7 @@ class _SignUpFormState extends State<SignUpForm> {
                             child: buildEmailFormField(context, 'Email')),
                       ),
                       //Password field
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Container(
-                            height: 50,
-                            child: buildPasswordFormField(context, 'Password')),
-                      ),
+                      
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Container(
@@ -268,7 +270,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           width: 160,
                           alignment: Alignment.center,
                           child: Text(
-                            'Get Started',
+                            'Distribute',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -278,32 +280,7 @@ class _SignUpFormState extends State<SignUpForm> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Already have an account? ',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text(
-                              'Sign In',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                     
                 ],
               ),
             ),
@@ -351,7 +328,7 @@ class _SignUpFormState extends State<SignUpForm> {
         //autofocus: false,
         controller: _nameController,
         validator: (_) =>
-            context.read<SignUpBloc>().state.isNameValid ? null : 'Invalid Name'
+            context.read<DistributionBloc>().state.isNameValid ? null : 'Invalid Name'
         // autofocus: false,
         );
   }
@@ -406,74 +383,20 @@ class _SignUpFormState extends State<SignUpForm> {
         autocorrect: false,
         //autofocus: false,
         controller: _emailController,
-        validator: (_) => context.read<SignUpBloc>().state.isEmailValid
+        validator: (_) => context.read<DistributionBloc>().state.isEmailValid
             ? null
             : 'Invalid Email'
         // autofocus: false,
         );
   }
 
-  TextFormField buildPasswordFormField(BuildContext context, String _hintText) {
-    return TextFormField(
-        style: TextStyle(
-          color: Colors.black,
-        ),
-        decoration: InputDecoration(
-          errorStyle: const TextStyle(fontSize: 15),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          fillColor: Colors.white,
-//focusColor: Colors.white,
-          filled: true,
-
-          prefixIcon: const Icon(
-            Icons.lock,
-          ),
-          labelText: _hintText,
-          labelStyle: const TextStyle(
-            letterSpacing: 1,
-            fontWeight: FontWeight.normal,
-            fontSize: 15,
-          ),
-        ),
-        autocorrect: false,
-        // autofocus: false,
-        obscureText: true,
-        controller: _passwordController,
-        validator: (_) => context.read<SignUpBloc>().state.isPasswordValid
-            ? null
-            : 'Invalid Password: must be greater than 6 char');
-  }
-
+ 
   void _onFormSubmitted() {
-    _signUpBloc.add(
+    distributionBloc.add(
       RegisterSubmitted(
         email: _emailController.text,
         name: _nameController.text,
-        password: _passwordController.text,
+    
         language: language,
       ),
     );
@@ -482,7 +405,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   void dispose() {
     _emailController?.dispose();
-    _passwordController?.dispose();
+  
     _nameController?.dispose();
 
     super.dispose();

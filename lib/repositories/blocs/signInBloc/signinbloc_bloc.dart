@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-
 import 'package:MyRhapsody/repositories/models/UserData/firebaseUserDataRepository.dart';
 import 'package:MyRhapsody/services/authService.dart';
 import 'package:MyRhapsody/services/helperClass.dart';
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
-part 'signin_event.dart';
-part 'signin_state.dart';
+part 'signinbloc_event.dart';
+part 'signinbloc_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final AuthService _authService = AuthService();

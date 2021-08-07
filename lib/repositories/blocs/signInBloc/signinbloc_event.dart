@@ -1,4 +1,4 @@
-part of 'signin_bloc.dart';
+part of 'signinbloc_bloc.dart';
 
 abstract class SignInEvent  {
   @override
@@ -31,7 +31,3 @@ class LoginWithCredentialsPressed extends SignInEvent {
   @override
   List<Object> get props => [email, password];
 }
-
-
-
-

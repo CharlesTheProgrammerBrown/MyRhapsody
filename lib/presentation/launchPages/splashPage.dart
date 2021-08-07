@@ -13,7 +13,7 @@ class SplashPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Image.asset(
-                "assets/logos/ROR.jpg",
+                "assets/logos/MyRhapsodyApp.jpg",
                 width: 300, //MediaQuery.of(context).size.width / 2,
                 height: 300,
               ),

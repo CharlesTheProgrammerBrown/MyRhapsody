@@ -1,4 +1,4 @@
-part of 'signin_bloc.dart';
+part of 'signinbloc_bloc.dart';
 
 class SignInState {
   final bool isEmailValid;

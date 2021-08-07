@@ -17,11 +17,21 @@ class AuthService {
   Future<User> registerWithEmailAndPassword(
       String email, String password, String name) async {
     try {
-      await firebaseAuth
-          .createUserWithEmailAndPassword(email: email, password: password)
-          .then((userValue) => {firebaseuser = userValue.user});
+      UserCredential result = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User user = result.user;
 
-      return firebaseuser;
+      user.updateProfile(displayName: name);
+
+      // await firebaseAuth
+      //     .createUserWithEmailAndPassword(email: email, password: password)
+      //     .then((userValue) => {firebaseuser = userValue.user});
+      // firebaseuser.updateProfile(displayName: name);
+      print("reaches here");
+
+      //return firebaseuser;
+
+      return user;
     } catch (e) {
       return null;
     }

@@ -1,6 +1,6 @@
 import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/presentation/signIn/widgets/signInForm.dart';
-import 'package:MyRhapsody/repositories/blocs/signInBloc/signin_bloc.dart';
+import 'package:MyRhapsody/repositories/blocs/signInBloc/signinbloc_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
