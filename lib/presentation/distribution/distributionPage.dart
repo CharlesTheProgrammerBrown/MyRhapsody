@@ -30,12 +30,12 @@ class DistributionPage extends StatelessWidget {
                         height: 150,
                       ),
                     ),
-                    BlocProvider<DistributionBloc>(
+                   /* BlocProvider<DistributionBloc>(
                       create: (context) => DistributionBloc(),
                       child: Expanded(
                         child: DistributionForm(),
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               )
