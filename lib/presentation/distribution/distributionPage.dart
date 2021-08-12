@@ -1,10 +1,12 @@
 import 'package:MyRhapsody/presentation/core/customStyles.dart';
+import 'package:MyRhapsody/presentation/distribution/widget/distributionForm.dart';
+import 'package:MyRhapsody/repositories/blocs/distributionBloc/distribution_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'widgets/signUpForm.dart';
+
 
 class DistributionPage extends StatelessWidget {
   @override
@@ -30,12 +32,12 @@ class DistributionPage extends StatelessWidget {
                         height: 150,
                       ),
                     ),
-                   /* BlocProvider<DistributionBloc>(
+                    BlocProvider<DistributionBloc>(
                       create: (context) => DistributionBloc(),
                       child: Expanded(
                         child: DistributionForm(),
                       ),
-                    ),*/
+                    ),
                   ],
                 ),
               )

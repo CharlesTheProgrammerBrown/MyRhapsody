@@ -1,5 +1,5 @@
 import 'package:MyRhapsody/repositories/models/DistributionModel/distributionModel.dart';
 
-abstract class UserDataRepository {
+abstract class DistributionRepository {
  Future<void> addDistributionData(DistributionModel distributionData);
 }

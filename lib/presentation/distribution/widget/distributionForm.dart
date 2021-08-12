@@ -1,5 +1,6 @@
 import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
+import 'package:MyRhapsody/repositories/blocs/distributionBloc/distribution_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -14,20 +15,19 @@ class DistributionForm extends StatefulWidget {
 
 class _DistributionFormState extends State<DistributionForm> {
   final TextEditingController _emailController = TextEditingController();
-  
+
   final TextEditingController _nameController = TextEditingController();
   String language = "Language";
 
   bool get isPopulated =>
-      _emailController.text.isNotEmpty &&
-     
-      _nameController.text.isNotEmpty;
+      _emailController.text.isNotEmpty && _nameController.text.isNotEmpty;
 
-  bool isButtonEnabled(DistributionBlocState state) {
+  bool isButtonEnabled(DistributionState state) {
     return state.isFormValid && isPopulated && !state.isSubmitting;
   }
 
   DistributionBloc distributionBloc;
+
   // FirstLaunchUserInfoEntryBloc _infoEntryBloc;
 
   @override
@@ -46,12 +46,131 @@ class _DistributionFormState extends State<DistributionForm> {
         DistributionEmailChanged(email: _emailController.text),
       );
     });
+  }
 
-    
+  TextFormField buildNameFormField(BuildContext context, String _hintText) {
+    return TextFormField(
+        style: TextStyle(
+          color: Colors.black,
+        ),
+        keyboardType: TextInputType.name,
+        decoration: InputDecoration(
+          errorStyle: const TextStyle(fontSize: 15),
+
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          fillColor: Colors.white,
+//focusColor: Colors.white,
+          filled: true,
+          prefixIcon: const Icon(
+            Icons.person,
+          ),
+          labelText: _hintText,
+          labelStyle: const TextStyle(
+            letterSpacing: 1,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+          ),
+        ),
+        autocorrect: false,
+        //autofocus: false,
+        controller: _nameController,
+        validator: (_) => context.read<DistributionBloc>().state.isNameValid
+            ? null
+            : 'Invalid Name'
+        // autofocus: false,
+        );
+  }
+
+  TextFormField buildEmailFormField(BuildContext context, String _hintText) {
+    return TextFormField(
+        style: TextStyle(
+          color: Colors.black,
+        ),
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          errorStyle: const TextStyle(fontSize: 15),
+
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          fillColor: Colors.white,
+//focusColor: Colors.white,
+          filled: true,
+          prefixIcon: const Icon(
+            Icons.email,
+          ),
+          labelText: _hintText,
+          labelStyle: const TextStyle(
+            letterSpacing: 1,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+          ),
+        ),
+        autocorrect: false,
+        //autofocus: false,
+        controller: _emailController,
+        validator: (_) => context.read<DistributionBloc>().state.isEmailValid
+            ? null
+            : 'Invalid Email'
+        // autofocus: false,
+        );
+  }
+
+  void _onFormSubmitted() {
+    distributionBloc.add(
+      DistributionSubmitted(
+        email: _emailController.text,
+        name: _nameController.text,
+        language: language,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController?.dispose();
+
+    _nameController?.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<DistributionBloc, DistributionBlocState>(
+    return BlocListener<DistributionBloc, DistributionState>(
       listener: (context, state) {
         if (state.isFailure) {
           Future.delayed(const Duration(seconds: 1), () {
@@ -71,34 +190,33 @@ class _DistributionFormState extends State<DistributionForm> {
           });
         } else if (state.isSubmitting) {
           Flushbar(
-              // message: "Creating Campaign!",
-              titleText: Text(
-                "Hello",
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontFamily: "HelveticaNeue"),
-              ),
-              messageText: Text(
-                "Organizing Distribution, Please wait!",
-                style: TextStyle(
-                    fontSize: 17.0,
-                    color: Colors.white,
-                    fontFamily: "HelveticaNeue"),
-              ),
-              flushbarPosition: FlushbarPosition.TOP,
-              backgroundColor: primaryColor,
-              progressIndicatorBackgroundColor: Colors.white,
-              icon: Icon(
-                Icons.hourglass_top_outlined,
-                color: Colors.white,
-              ),
-              progressIndicatorValueColor:
-                  AlwaysStoppedAnimation<Color>(secondaryColor),
-              showProgressIndicator: true,
-              duration: Duration(seconds: 3),
-            ).show(context);
-            
+            // message: "Creating Campaign!",
+            titleText: Text(
+              "Hello",
+              style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontFamily: "HelveticaNeue"),
+            ),
+            messageText: Text(
+              "Organizing Distribution, Please wait!",
+              style: TextStyle(
+                  fontSize: 17.0,
+                  color: Colors.white,
+                  fontFamily: "HelveticaNeue"),
+            ),
+            flushbarPosition: FlushbarPosition.TOP,
+            backgroundColor: primaryColor,
+            progressIndicatorBackgroundColor: Colors.white,
+            icon: Icon(
+              Icons.hourglass_top_outlined,
+              color: Colors.white,
+            ),
+            progressIndicatorValueColor:
+                AlwaysStoppedAnimation<Color>(secondaryColor),
+            showProgressIndicator: true,
+            duration: Duration(seconds: 3),
+          ).show(context);
         } else if (state.isSuccess) {
           Scaffold.of(context)
             ..removeCurrentSnackBar()
@@ -123,7 +241,7 @@ class _DistributionFormState extends State<DistributionForm> {
           Navigator.pushNamed(context, '/');
         }
       },
-      child: BlocBuilder<DistributionBloc, DistributionBlocState>(
+      child: BlocBuilder<DistributionBloc, DistributionState>(
         builder: (context, state) {
           return Container(
             padding: const EdgeInsets.symmetric(
@@ -159,7 +277,7 @@ class _DistributionFormState extends State<DistributionForm> {
                             child: buildEmailFormField(context, 'Email')),
                       ),
                       //Password field
-                      
+
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Container(
@@ -280,7 +398,8 @@ class _DistributionFormState extends State<DistributionForm> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                     
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -288,126 +407,5 @@ class _DistributionFormState extends State<DistributionForm> {
         },
       ),
     );
-  }
-
-  TextFormField buildNameFormField(BuildContext context, String _hintText) {
-    return TextFormField(
-        style: TextStyle(
-          color: Colors.black,
-        ),
-        keyboardType: TextInputType.name,
-        decoration: InputDecoration(
-          errorStyle: const TextStyle(fontSize: 15),
-
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-          fillColor: Colors.white,
-//focusColor: Colors.white,
-          filled: true,
-          prefixIcon: const Icon(
-            Icons.person,
-          ),
-          labelText: _hintText,
-          labelStyle: const TextStyle(
-            letterSpacing: 1,
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            fontSize: 15,
-          ),
-        ),
-        autocorrect: false,
-        //autofocus: false,
-        controller: _nameController,
-        validator: (_) =>
-            context.read<DistributionBloc>().state.isNameValid ? null : 'Invalid Name'
-        // autofocus: false,
-        );
-  }
-
-  TextFormField buildEmailFormField(BuildContext context, String _hintText) {
-    return TextFormField(
-        style: TextStyle(
-          color: Colors.black,
-        ),
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          errorStyle: const TextStyle(fontSize: 15),
-
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-          fillColor: Colors.white,
-//focusColor: Colors.white,
-          filled: true,
-          prefixIcon: const Icon(
-            Icons.email,
-          ),
-          labelText: _hintText,
-          labelStyle: const TextStyle(
-            letterSpacing: 1,
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            fontSize: 15,
-          ),
-        ),
-        autocorrect: false,
-        //autofocus: false,
-        controller: _emailController,
-        validator: (_) => context.read<DistributionBloc>().state.isEmailValid
-            ? null
-            : 'Invalid Email'
-        // autofocus: false,
-        );
-  }
-
- 
-  void _onFormSubmitted() {
-    distributionBloc.add(
-      RegisterSubmitted(
-        email: _emailController.text,
-        name: _nameController.text,
-    
-        language: language,
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _emailController?.dispose();
-  
-    _nameController?.dispose();
-
-    super.dispose();
   }
 }
