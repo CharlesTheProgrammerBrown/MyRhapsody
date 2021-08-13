@@ -2,6 +2,7 @@ import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/presentation/distribution/widget/distributionForm.dart';
 import 'package:MyRhapsody/repositories/blocs/distributionBloc/distribution_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
+import 'package:MyRhapsody/theme/styles.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +19,7 @@ class DistributionPage extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: secondaryColor,
+            color: Styles.colorSecondary,
             child: CustomScrollView(reverse: true, slivers: <Widget>[
               SliverFillRemaining(
                 hasScrollBody: false,

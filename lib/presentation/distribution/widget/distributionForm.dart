@@ -2,6 +2,7 @@ import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/distributionBloc/distribution_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
+import 'package:MyRhapsody/theme/styles.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
@@ -206,14 +207,14 @@ class _DistributionFormState extends State<DistributionForm> {
                   fontFamily: "HelveticaNeue"),
             ),
             flushbarPosition: FlushbarPosition.TOP,
-            backgroundColor: primaryColor,
+            backgroundColor: Styles.colorPrimary,
             progressIndicatorBackgroundColor: Colors.white,
             icon: Icon(
               Icons.hourglass_top_outlined,
               color: Colors.white,
             ),
             progressIndicatorValueColor:
-                AlwaysStoppedAnimation<Color>(secondaryColor),
+                AlwaysStoppedAnimation<Color>(Styles.colorSecondary),
             showProgressIndicator: true,
             duration: Duration(seconds: 3),
           ).show(context);
@@ -322,7 +323,7 @@ class _DistributionFormState extends State<DistributionForm> {
                                     elevation: 2,
                                     iconSize: 30.0,
                                     //focusColor: Colors.white,
-                                    iconEnabledColor: primaryColor,
+                                    iconEnabledColor: Styles.colorPrimary,
                                     onChanged: null,
                                     items: const [
                                       DropdownMenuItem(
@@ -371,7 +372,7 @@ class _DistributionFormState extends State<DistributionForm> {
                   Column(
                     children: <Widget>[
                       FlatButton(
-                        color: primaryColor,
+                        color: Styles.colorPrimary,
                         onPressed: () async {
                           if (isButtonEnabled(state)) {
                             _onFormSubmitted();

@@ -4,6 +4,7 @@ import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/presentation/signUp/signUpPage.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signInBloc/signinbloc_bloc.dart';
+import 'package:MyRhapsody/theme/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class _SignInFormState extends State<SignInForm> {
             ..removeCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
-                backgroundColor: secondaryColor,
+                backgroundColor: Styles.colorSecondary,
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -81,7 +82,7 @@ class _SignInFormState extends State<SignInForm> {
             ..removeCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
-                backgroundColor: secondaryColor,
+                backgroundColor: Styles.colorSecondary,
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -98,7 +99,7 @@ class _SignInFormState extends State<SignInForm> {
             ..removeCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
-                backgroundColor: secondaryColor,
+                backgroundColor: Styles.colorSecondary,
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -125,7 +126,7 @@ class _SignInFormState extends State<SignInForm> {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.0),
-                  color: secondaryColor,
+                  color: Styles.colorSecondary,
                 ),
                 height: 450,
                 child: Column(children: [
@@ -188,7 +189,7 @@ class _SignInFormState extends State<SignInForm> {
                           height: 10,
                         ),
                         FlatButton(
-                          color: primaryColor,
+                          color: Styles.colorPrimary,
                           onPressed: () {
                             if (isButtonEnabled(state)) {
                               _signInBloc.add(

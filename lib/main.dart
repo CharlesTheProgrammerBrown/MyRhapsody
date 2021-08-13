@@ -5,6 +5,7 @@ import 'package:MyRhapsody/presentation/launchPages/splashPage.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signInBloc/signinbloc_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
+import 'package:MyRhapsody/theme/styles.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -82,7 +83,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: secondaryColor,
+        statusBarColor: Styles.colorSecondary,
       ),
       child: MaterialApp(
         title: 'MyRhapsody',
@@ -91,8 +92,8 @@ class MyApp extends StatelessWidget {
           // fontFamily: 'HelveticaNeue',
           // primarySwatch: Colors.blue[900], //const Color(0xFFf857a6),
           errorColor: Colors.red,
-          canvasColor: secondaryColor,
-          primaryColor: primaryColor,
+          canvasColor: Styles.colorSecondary,
+          primaryColor: Styles.colorPrimary,
           //const Color(0XFFEEABC4),
           indicatorColor: Colors.black,
         ),
@@ -116,7 +117,6 @@ class AppGeneral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       builder: (context, state) {
         if (state is AuthenticationInitial) {
@@ -126,9 +126,7 @@ class AppGeneral extends StatelessWidget {
         } else if (state is AuthenticationFailure) {
           return OnBoardingPage(); //SignInPage();
         } else if (state is AuthenticationSuccess) {
-          return HomePage(
-            authService: _authService,
-          ); //SignInPage();
+          return HomePage(); //SignInPage();
         }
         return Container();
       },

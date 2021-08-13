@@ -9,9 +9,6 @@ import 'package:flutter/material.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    //data you're passing
-    final AuthService authService = AuthService();
-    
 
     switch (settings.name) {
       case '/':
@@ -31,17 +28,8 @@ class RouteGenerator {
         break;
       case '/home':
         return MaterialPageRoute(
-            builder: (_) => HomePage(
-                  authService: authService,
-                ));
+            builder: (_) => HomePage());
 
-      // case '/NGOcampaigns':
-      //   return MaterialPageRoute(builder: (_) => NGOcampaigns());
-
-      // case '/fundRaiserView':
-      //   return MaterialPageRoute(builder: (_) => NGOcampaignView());
-
-     
       default:
         // If there is no such named route in the switch statement, e.g. /third
         return _errorRoute();

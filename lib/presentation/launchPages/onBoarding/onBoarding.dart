@@ -1,4 +1,5 @@
 import 'package:MyRhapsody/presentation/core/customStyles.dart';
+import 'package:MyRhapsody/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'onBoardingItems.dart';
@@ -18,7 +19,7 @@ class OnBoardingPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: secondaryColor,
+        backgroundColor: Styles.colorSecondary,
         elevation: 0.0,
       ),
       body: SafeArea(
@@ -74,7 +75,7 @@ class OnBoardingPage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: indicator == index
-                                      ? secondaryColor
+                                      ? Styles.colorSecondary
                                       : Colors.grey,
                                 ),
                               ),
@@ -108,7 +109,7 @@ class OnBoardingPage extends StatelessWidget {
                                     },
 
                                     // splashColor: const Color(0xFFf857a6),
-                                    color: primaryColor,
+                                    color: Styles.colorPrimary,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(18.0),
                                       side: const BorderSide(
@@ -140,7 +141,7 @@ class OnBoardingPage extends StatelessWidget {
                                       } else {}
                                     },
                                     // splashColor: const Color(0xFFf857a6),
-                                    color: primaryColor,
+                                    color: Styles.colorPrimary,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(18.0),
                                       side: const BorderSide(
@@ -177,7 +178,7 @@ class OnBoardingPage extends StatelessWidget {
                                   }
                                 },
                                 // splashColor: const Color(0xFFf857a6),
-                                color: primaryColor,
+                                color: Styles.colorPrimary,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18.0),
                                   side: const BorderSide(
