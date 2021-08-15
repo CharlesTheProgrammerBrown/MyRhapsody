@@ -1,0 +1,2503 @@
+{"data":[
+	{
+		"language_code": "a_sang_khong_so",
+		"language_title": "A Sang Khong So"
+	},
+	{
+		"language_code": "abinom",
+		"language_title": "Abinom"
+	},
+	{
+		"language_code": "abui",
+		"language_title": "Abui"
+	},
+	{
+		"language_code": "aceh",
+		"language_title": "Aceh"
+	},
+	{
+		"language_code": "adivasi",
+		"language_title": "Adivasi"
+	},
+	{
+		"language_code": "afrikaans",
+		"language_title": "Afrikaans"
+	},
+	{
+		"language_code": "agni",
+		"language_title": "Agni"
+	},
+	{
+		"language_code": "airani",
+		"language_title": "Airani"
+	},
+	{
+		"language_code": "alas",
+		"language_title": "Alas"
+	},
+	{
+		"language_code": "alores",
+		"language_title": "Alores"
+	},
+	{
+		"language_code": "ambon_allang",
+		"language_title": "Ambon Allang"
+	},
+	{
+		"language_code": "ambon",
+		"language_title": "Ambon"
+	},
+	{
+		"language_code": "amharic",
+		"language_title": "Amharic"
+	},
+	{
+		"language_code": "ampanang",
+		"language_title": "Ampanang"
+	},
+	{
+		"language_code": "amungkal",
+		"language_title": "Amungkal"
+	},
+	{
+		"language_code": "anakalang",
+		"language_title": "Anakalang"
+	},
+	{
+		"language_code": "andio",
+		"language_title": "Andio"
+	},
+	{
+		"language_code": "andoni",
+		"language_title": "Andoni"
+	},
+	{
+		"language_code": "ange",
+		"language_title": "Ange"
+	},
+	{
+		"language_code": "angika",
+		"language_title": "Angika"
+	},
+	{
+		"language_code": "angkola",
+		"language_title": "Angkola"
+	},
+	{
+		"language_code": "ansus",
+		"language_title": "Ansus"
+	},
+	{
+		"language_code": "arabic",
+		"language_title": "Arabic"
+	},
+	{
+		"language_code": "aralle",
+		"language_title": "Aralle"
+	},
+	{
+		"language_code": "aru",
+		"language_title": "Aru"
+	},
+	{
+		"language_code": "asmat",
+		"language_title": "Asmat"
+	},
+	{
+		"language_code": "assamese",
+		"language_title": "Assamese"
+	},
+	{
+		"language_code": "ateso",
+		"language_title": "Ateso"
+	},
+	{
+		"language_code": "awadhi",
+		"language_title": "Awadhi"
+	},
+	{
+		"language_code": "awo_sumakuyu",
+		"language_title": "Awo-Sumakuyu"
+	},
+	{
+		"language_code": "azerbaijani",
+		"language_title": "Azerbaijani"
+	},
+	{
+		"language_code": "ba_central",
+		"language_title": "Ba Central"
+	},
+	{
+		"language_code": "ba_nadi",
+		"language_title": "Ba Nadi"
+	},
+	{
+		"language_code": "ba_soroko",
+		"language_title": "Ba Soroko"
+	},
+	{
+		"language_code": "ba_tavua",
+		"language_title": "Ba Tavua"
+	},
+	{
+		"language_code": "ba_yasawa",
+		"language_title": "Ba Yasawa"
+	},
+	{
+		"language_code": "baangru",
+		"language_title": "Baangru"
+	},
+	{
+		"language_code": "babar",
+		"language_title": "Babar"
+	},
+	{
+		"language_code": "bacan",
+		"language_title": "Bacan"
+	},
+	{
+		"language_code": "bada_besona",
+		"language_title": "Bada Besona"
+	},
+	{
+		"language_code": "bada",
+		"language_title": "Bada"
+	},
+	{
+		"language_code": "baegu",
+		"language_title": "Baegu"
+	},
+	{
+		"language_code": "bagadi",
+		"language_title": "Bagadi"
+	},
+	{
+		"language_code": "bagheli",
+		"language_title": "Bagheli"
+	},
+	{
+		"language_code": "bagusa",
+		"language_title": "Bagusa"
+	},
+	{
+		"language_code": "bahasa_adang",
+		"language_title": "Bahasa Adang"
+	},
+	{
+		"language_code": "bahasa",
+		"language_title": "Bahasa"
+	},
+	{
+		"language_code": "bahasa_kauwera",
+		"language_title": "Bahasa Kauwera"
+	},
+	{
+		"language_code": "bahasa_kayu_pulau",
+		"language_title": "Bahasa Kayu Pulau"
+	},
+	{
+		"language_code": "bahasa_keder",
+		"language_title": "Bahasa Keder"
+	},
+	{
+		"language_code": "bahasa_kemtuk",
+		"language_title": "Bahasa Kemtuk"
+	},
+	{
+		"language_code": "bahasa_kerinci",
+		"language_title": "Bahasa Kerinci"
+	},
+	{
+		"language_code": "bahasa_mander",
+		"language_title": "Bahasa Mander"
+	},
+	{
+		"language_code": "bahasa_monao",
+		"language_title": "Bahasa Monao"
+	},
+	{
+		"language_code": "bahasa_nopuk",
+		"language_title": "Bahasa Nopuk"
+	},
+	{
+		"language_code": "bahasa_oria",
+		"language_title": "Bahasa Oria"
+	},
+	{
+		"language_code": "bahasa_ormu",
+		"language_title": "Bahasa Ormu"
+	},
+	{
+		"language_code": "bahasa_papasena",
+		"language_title": "Bahasa Papasena"
+	},
+	{
+		"language_code": "bahasa_pauwi",
+		"language_title": "Bahasa Pauwi"
+	},
+	{
+		"language_code": "bahasa_podena",
+		"language_title": "Bahasa Podena"
+	},
+	{
+		"language_code": "bahasa_samarokena",
+		"language_title": "Bahasa Samarokena"
+	},
+	{
+		"language_code": "bahasa_sangke",
+		"language_title": "Bahasa Sangke"
+	},
+	{
+		"language_code": "bahasa_sause",
+		"language_title": "Bahasa Sause"
+	},
+	{
+		"language_code": "bahasa_senggi",
+		"language_title": "Bahasa Senggi"
+	},
+	{
+		"language_code": "bahasa_sobei",
+		"language_title": "Bahasa Sobei"
+	},
+	{
+		"language_code": "bahasa_tabla",
+		"language_title": "Bahasa Tabla"
+	},
+	{
+		"language_code": "bahasa_tarpia",
+		"language_title": "Bahasa Tarpia"
+	},
+	{
+		"language_code": "bahasa_tobati",
+		"language_title": "Bahasa Tobati"
+	},
+	{
+		"language_code": "bahasa_tofamna",
+		"language_title": "Bahasa Tofamna"
+	},
+	{
+		"language_code": "bahasa_towe",
+		"language_title": "Bahasa Towe"
+	},
+	{
+		"language_code": "bajau",
+		"language_title": "Bajau"
+	},
+	{
+		"language_code": "bajau_pondong",
+		"language_title": "Bajau Pondong"
+	},
+	{
+		"language_code": "bakor",
+		"language_title": "Bakor"
+	},
+	{
+		"language_code": "bali",
+		"language_title": "Bali"
+	},
+	{
+		"language_code": "banda",
+		"language_title": "Banda"
+	},
+	{
+		"language_code": "banjara",
+		"language_title": "Banjara"
+	},
+	{
+		"language_code": "banjarese",
+		"language_title": "Banjarese"
+	},
+	{
+		"language_code": "bardezi",
+		"language_title": "Bardezi"
+	},
+	{
+		"language_code": "bareli",
+		"language_title": "Bareli"
+	},
+	{
+		"language_code": "barua",
+		"language_title": "Barua"
+	},
+	{
+		"language_code": "basque",
+		"language_title": "Basque"
+	},
+	{
+		"language_code": "bassa",
+		"language_title": "Bassa"
+	},
+	{
+		"language_code": "batak",
+		"language_title": "Batak"
+	},
+	{
+		"language_code": "batak_karo",
+		"language_title": "Batak karo"
+	},
+	{
+		"language_code": "bawo",
+		"language_title": "Bawo"
+	},
+	{
+		"language_code": "bechame",
+		"language_title": "Bechame"
+	},
+	{
+		"language_code": "belalau",
+		"language_title": "Belalau"
+	},
+	{
+		"language_code": "belarusian",
+		"language_title": "Belarusian"
+	},
+	{
+		"language_code": "bengali",
+		"language_title": "Bengali"
+	},
+	{
+		"language_code": "bentian",
+		"language_title": "Bentian"
+	},
+	{
+		"language_code": "berom",
+		"language_title": "Berom"
+	},
+	{
+		"language_code": "besoa",
+		"language_title": "Besoa"
+	},
+	{
+		"language_code": "bete",
+		"language_title": "Bete"
+	},
+	{
+		"language_code": "bhangali",
+		"language_title": "Bhangali"
+	},
+	{
+		"language_code": "bharteli",
+		"language_title": "Bharteli"
+	},
+	{
+		"language_code": "bhili",
+		"language_title": "Bhili"
+	},
+	{
+		"language_code": "bhojpuri",
+		"language_title": "Bhojpuri"
+	},
+	{
+		"language_code": "bicol",
+		"language_title": "Bicol"
+	},
+	{
+		"language_code": "biga",
+		"language_title": "Biga"
+	},
+	{
+		"language_code": "bilaspuri",
+		"language_title": "Bilaspuri"
+	},
+	{
+		"language_code": "birwa",
+		"language_title": "Birwa"
+	},
+	{
+		"language_code": "bislama",
+		"language_title": "Bislama"
+	},
+	{
+		"language_code": "boro",
+		"language_title": "Boro"
+	},
+	{
+		"language_code": "bosnian",
+		"language_title": "Bosnian"
+	},
+	{
+		"language_code": "braj",
+		"language_title": "Braj"
+	},
+	{
+		"language_code": "brazilian_portuguese",
+		"language_title": "Brazilian Portuguese"
+	},
+	{
+		"language_code": "bua",
+		"language_title": "Bua"
+	},
+	{
+		"language_code": "buan_long",
+		"language_title": "Buan Long"
+	},
+	{
+		"language_code": "bugis",
+		"language_title": "Bugis"
+	},
+	{
+		"language_code": "bulanga",
+		"language_title": "Bulanga"
+	},
+	{
+		"language_code": "bulu",
+		"language_title": "Bulu"
+	},
+	{
+		"language_code": "bulungan",
+		"language_title": "Bulungan"
+	},
+	{
+		"language_code": "bundelkhandi",
+		"language_title": "Bundelkhandi"
+	},
+	{
+		"language_code": "bura",
+		"language_title": "Bura"
+	},
+	{
+		"language_code": "buru",
+		"language_title": "Buru"
+	},
+	{
+		"language_code": "buryatian",
+		"language_title": "Buryatian"
+	},
+	{
+		"language_code": "cakaudrove",
+		"language_title": "Cakaudrove"
+	},
+	{
+		"language_code": "cantonese",
+		"language_title": "Cantonese"
+	},
+	{
+		"language_code": "chambeali",
+		"language_title": "Chambeali"
+	},
+	{
+		"language_code": "chattisgarhi",
+		"language_title": "Chattisgarhi"
+	},
+	{
+		"language_code": "chaudhari",
+		"language_title": "Chaudhari"
+	},
+	{
+		"language_code": "chichewa",
+		"language_title": "Chichewa"
+	},
+	{
+		"language_code": "chikunda",
+		"language_title": "Chikunda"
+	},
+	{
+		"language_code": "chilela",
+		"language_title": "Chilela"
+	},
+	{
+		"language_code": "churahi",
+		"language_title": "Churahi"
+	},
+	{
+		"language_code": "cikoneng",
+		"language_title": "Cikoneng"
+	},
+	{
+		"language_code": "citak",
+		"language_title": "Citak"
+	},
+	{
+		"language_code": "congthia",
+		"language_title": "Congthia"
+	},
+	{
+		"language_code": "croatian",
+		"language_title": "Croatian"
+	},
+	{
+		"language_code": "czech",
+		"language_title": "Czech"
+	},
+	{
+		"language_code": "dakka",
+		"language_title": "Dakka"
+	},
+	{
+		"language_code": "damarpura_komering_ulu",
+		"language_title": "Damarpura-Komering Ulu"
+	},
+	{
+		"language_code": "dampelas",
+		"language_title": "Dampelas"
+	},
+	{
+		"language_code": "daya",
+		"language_title": "Daya"
+	},
+	{
+		"language_code": "dayak_baream",
+		"language_title": "Dayak Baream"
+	},
+	{
+		"language_code": "dayak_kalis",
+		"language_title": "Dayak Kalis"
+	},
+	{
+		"language_code": "dayak_kapuas",
+		"language_title": "Dayak Kapuas"
+	},
+	{
+		"language_code": "dayak_malang",
+		"language_title": "Dayak Malang"
+	},
+	{
+		"language_code": "dayak_ngaju",
+		"language_title": "Dayak Ngaju"
+	},
+	{
+		"language_code": "dayak_ot_danum",
+		"language_title": "Dayak ot Danum"
+	},
+	{
+		"language_code": "delang",
+		"language_title": "Delang"
+	},
+	{
+		"language_code": "demta",
+		"language_title": "Demta"
+	},
+	{
+		"language_code": "dhodiya",
+		"language_title": "Dhodiya"
+	},
+	{
+		"language_code": "dhundhari",
+		"language_title": "Dhundhari"
+	},
+	{
+		"language_code": "dogri",
+		"language_title": "Dogri"
+	},
+	{
+		"language_code": "dombe",
+		"language_title": "Dombe"
+	},
+	{
+		"language_code": "dondo",
+		"language_title": "Dondo"
+	},
+	{
+		"language_code": "duala",
+		"language_title": "Duala"
+	},
+	{
+		"language_code": "dusun_kalahien",
+		"language_title": "Dusun Kalahien"
+	},
+	{
+		"language_code": "dutch",
+		"language_title": "Dutch"
+	},
+	{
+		"language_code": "edo",
+		"language_title": "Edo"
+	},
+	{
+		"language_code": "ehugbo",
+		"language_title": "Ehugbo"
+	},
+	{
+		"language_code": "ejagham",
+		"language_title": "Ejagham"
+	},
+	{
+		"language_code": "enkele",
+		"language_title": "Enkele"
+	},
+	{
+		"language_code": "esan",
+		"language_title": "Esan"
+	},
+	{
+		"language_code": "esperanto",
+		"language_title": "Esperanto"
+	},
+	{
+		"language_code": "estonian",
+		"language_title": "Estonian"
+	},
+	{
+		"language_code": "ewe",
+		"language_title": "Ewe"
+	},
+	{
+		"language_code": "filipino",
+		"language_title": "Filipino"
+	},
+	{
+		"language_code": "finnish",
+		"language_title": "Finnish"
+	},
+	{
+		"language_code": "flemish",
+		"language_title": "Flemish"
+	},
+	{
+		"language_code": "fordata",
+		"language_title": "Fordata"
+	},
+	{
+		"language_code": "foya",
+		"language_title": "Foya"
+	},
+	{
+		"language_code": "french",
+		"language_title": "French"
+	},
+	{
+		"language_code": "french_quebec",
+		"language_title": "French Quebec"
+	},
+	{
+		"language_code": "furtuna",
+		"language_title": "Furtuna"
+	},
+	{
+		"language_code": "furu_furu",
+		"language_title": "Furu Furu"
+	},
+	{
+		"language_code": "furur",
+		"language_title": "Furur"
+	},
+	{
+		"language_code": "fwee",
+		"language_title": "Fwee"
+	},
+	{
+		"language_code": "gaddi",
+		"language_title": "Gaddi"
+	},
+	{
+		"language_code": "gadhi",
+		"language_title": "Gadhi"
+	},
+	{
+		"language_code": "gaelic_scotts",
+		"language_title": "Gaelic Scotts"
+	},
+	{
+		"language_code": "galician",
+		"language_title": "Galician"
+	},
+	{
+		"language_code": "galik",
+		"language_title": "Galik"
+	},
+	{
+		"language_code": "gamit",
+		"language_title": "Gamit"
+	},
+	{
+		"language_code": "garo",
+		"language_title": "Garo"
+	},
+	{
+		"language_code": "garwali",
+		"language_title": "Garwali"
+	},
+	{
+		"language_code": "german",
+		"language_title": "German"
+	},
+	{
+		"language_code": "ghisadi",
+		"language_title": "Ghisadi"
+	},
+	{
+		"language_code": "gikuyu",
+		"language_title": "Gikuyu"
+	},
+	{
+		"language_code": "givandi",
+		"language_title": "Givandi"
+	},
+	{
+		"language_code": "goan_konkani",
+		"language_title": "Goan Konkani"
+	},
+	{
+		"language_code": "goba",
+		"language_title": "Goba"
+	},
+	{
+		"language_code": "gogodala",
+		"language_title": "Gogodala"
+	},
+	{
+		"language_code": "gokana",
+		"language_title": "Gokana"
+	},
+	{
+		"language_code": "govlan",
+		"language_title": "Govlan"
+	},
+	{
+		"language_code": "greek",
+		"language_title": "Greek"
+	},
+	{
+		"language_code": "gujarathi",
+		"language_title": "Gujarathi"
+	},
+	{
+		"language_code": "gula_ala",
+		"language_title": "Gula'ala"
+	},
+	{
+		"language_code": "gulimancema",
+		"language_title": "Gulimancema"
+	},
+	{
+		"language_code": "haji",
+		"language_title": "Haji"
+	},
+	{
+		"language_code": "halbi",
+		"language_title": "Halbi"
+	},
+	{
+		"language_code": "halmahera",
+		"language_title": "Halmahera"
+	},
+	{
+		"language_code": "haruku",
+		"language_title": "Haruku"
+	},
+	{
+		"language_code": "haryanvi",
+		"language_title": "Haryanvi"
+	},
+	{
+		"language_code": "hausa",
+		"language_title": "Hausa"
+	},
+	{
+		"language_code": "hercegovina",
+		"language_title": "Hercegovina"
+	},
+	{
+		"language_code": "hindi",
+		"language_title": "Hindi"
+	},
+	{
+		"language_code": "hindi_urdu",
+		"language_title": "Hindi Urdu"
+	},
+	{
+		"language_code": "hindouri",
+		"language_title": "Hindouri"
+	},
+	{
+		"language_code": "hkong_so",
+		"language_title": "Hkong So"
+	},
+	{
+		"language_code": "hlam_phei",
+		"language_title": "Hlam phei"
+	},
+	{
+		"language_code": "hmar",
+		"language_title": "Hmar"
+	},
+	{
+		"language_code": "hmawng_tlang",
+		"language_title": "Hmawng Tlang"
+	},
+	{
+		"language_code": "hniar_lawn",
+		"language_title": "Hniar Lawn"
+	},
+	{
+		"language_code": "ho",
+		"language_title": "Ho"
+	},
+	{
+		"language_code": "hohumono",
+		"language_title": "Hohumono"
+	},
+	{
+		"language_code": "hran_hring",
+		"language_title": "Hran Hring"
+	},
+	{
+		"language_code": "hreng_pi",
+		"language_title": "Hreng Pi"
+	},
+	{
+		"language_code": "hriphi",
+		"language_title": "Hriphi"
+	},
+	{
+		"language_code": "hungarian",
+		"language_title": "Hungarian"
+	},
+	{
+		"language_code": "iban",
+		"language_title": "Iban"
+	},
+	{
+		"language_code": "ibani",
+		"language_title": "Ibani"
+	},
+	{
+		"language_code": "ibibio",
+		"language_title": "Ibibio"
+	},
+	{
+		"language_code": "icelandic",
+		"language_title": "Icelandic"
+	},
+	{
+		"language_code": "igala",
+		"language_title": "Igala"
+	},
+	{
+		"language_code": "igbo",
+		"language_title": "Igbo"
+	},
+	{
+		"language_code": "ikalanga",
+		"language_title": "Ikalanga"
+	},
+	{
+		"language_code": "ikwere",
+		"language_title": "Ikwere"
+	},
+	{
+		"language_code": "ikwo",
+		"language_title": "Ikwo"
+	},
+	{
+		"language_code": "ila",
+		"language_title": "Ila"
+	},
+	{
+		"language_code": "ilocano",
+		"language_title": "Ilocano"
+	},
+	{
+		"language_code": "ilongo",
+		"language_title": "Ilongo"
+	},
+	{
+		"language_code": "indonesian",
+		"language_title": "Indonesian"
+	},
+	{
+		"language_code": "indonesian_rana",
+		"language_title": "Indonesian Rana"
+	},
+	{
+		"language_code": "italian",
+		"language_title": "Italian"
+	},
+	{
+		"language_code": "ivatan",
+		"language_title": "Ivatan"
+	},
+	{
+		"language_code": "iwur",
+		"language_title": "Iwur"
+	},
+	{
+		"language_code": "izzi",
+		"language_title": "Izzi"
+	},
+	{
+		"language_code": "jaar",
+		"language_title": "Jaar"
+	},
+	{
+		"language_code": "jabung",
+		"language_title": "Jabung"
+	},
+	{
+		"language_code": "jaijolo",
+		"language_title": "Jaijolo"
+	},
+	{
+		"language_code": "jangkang",
+		"language_title": "Jangkang"
+	},
+	{
+		"language_code": "japanese",
+		"language_title": "Japanese"
+	},
+	{
+		"language_code": "jaunsaril",
+		"language_title": "Jaunsaril"
+	},
+	{
+		"language_code": "javanese",
+		"language_title": "Javanese"
+	},
+	{
+		"language_code": "jenjo",
+		"language_title": "Jenjo"
+	},
+	{
+		"language_code": "jukun",
+		"language_title": "Jukun"
+	},
+	{
+		"language_code": "jukun_takun",
+		"language_title": "Jukun Takun"
+	},
+	{
+		"language_code": "kabiye",
+		"language_title": "Kabiye"
+	},
+	{
+		"language_code": "kabola",
+		"language_title": "Kabola"
+	},
+	{
+		"language_code": "kachin",
+		"language_title": "Kachin"
+	},
+	{
+		"language_code": "kadai",
+		"language_title": "Kadai"
+	},
+	{
+		"language_code": "kadavu",
+		"language_title": "Kadavu"
+	},
+	{
+		"language_code": "kaeti",
+		"language_title": "Kaeti"
+	},
+	{
+		"language_code": "kafoa",
+		"language_title": "Kafoa"
+	},
+	{
+		"language_code": "kaidipang",
+		"language_title": "Kaidipang"
+	},
+	{
+		"language_code": "kaikadi",
+		"language_title": "Kaikadi"
+	},
+	{
+		"language_code": "kaili",
+		"language_title": "Kaili"
+	},
+	{
+		"language_code": "kaka",
+		"language_title": "Kaka"
+	},
+	{
+		"language_code": "kalabari",
+		"language_title": "Kalabari"
+	},
+	{
+		"language_code": "kalela",
+		"language_title": "Kalela"
+	},
+	{
+		"language_code": "kalianda",
+		"language_title": "Kalianda"
+	},
+	{
+		"language_code": "kamang",
+		"language_title": "Kamang"
+	},
+	{
+		"language_code": "kambera",
+		"language_title": "Kambera"
+	},
+	{
+		"language_code": "kambera_pandawai",
+		"language_title": "Kambera Pandawai"
+	},
+	{
+		"language_code": "kangri",
+		"language_title": "Kangri"
+	},
+	{
+		"language_code": "kanuri",
+		"language_title": "Kanuri"
+	},
+	{
+		"language_code": "kapuas",
+		"language_title": "Kapuas"
+	},
+	{
+		"language_code": "karakalpak",
+		"language_title": "Karakalpak"
+	},
+	{
+		"language_code": "karen",
+		"language_title": "Karen"
+	},
+	{
+		"language_code": "kashimiri",
+		"language_title": "Kashimiri"
+	},
+	{
+		"language_code": "katingan_hulu",
+		"language_title": "Katingan Hulu"
+	},
+	{
+		"language_code": "kau",
+		"language_title": "Kau"
+	},
+	{
+		"language_code": "kauwoi",
+		"language_title": "Kauwoi"
+	},
+	{
+		"language_code": "kaya_kgb",
+		"language_title": "Kaya Kgb"
+	},
+	{
+		"language_code": "kayaan",
+		"language_title": "Kayaan"
+	},
+	{
+		"language_code": "kayagar",
+		"language_title": "Kayagar"
+	},
+	{
+		"language_code": "kayaw",
+		"language_title": "Kayaw"
+	},
+	{
+		"language_code": "kazakh",
+		"language_title": "Kazakh"
+	},
+	{
+		"language_code": "kedang",
+		"language_title": "Kedang"
+	},
+	{
+		"language_code": "keikisar",
+		"language_title": "Keikisar"
+	},
+	{
+		"language_code": "kelay",
+		"language_title": "Kelay"
+	},
+	{
+		"language_code": "kemak",
+		"language_title": "Kemak"
+	},
+	{
+		"language_code": "kembayan",
+		"language_title": "Kembayan"
+	},
+	{
+		"language_code": "kendawangan",
+		"language_title": "Kendawangan"
+	},
+	{
+		"language_code": "kenyah",
+		"language_title": "Kenyah"
+	},
+	{
+		"language_code": "kenyan_swahili",
+		"language_title": "Kenyan Swahili"
+	},
+	{
+		"language_code": "kerambai",
+		"language_title": "Kerambai"
+	},
+	{
+		"language_code": "kereho",
+		"language_title": "Kereho"
+	},
+	{
+		"language_code": "khana",
+		"language_title": "Khana"
+	},
+	{
+		"language_code": "khariya",
+		"language_title": "Khariya"
+	},
+	{
+		"language_code": "khichdi",
+		"language_title": "Khichdi"
+	},
+	{
+		"language_code": "khoe_khoe",
+		"language_title": "Khoe Khoe"
+	},
+	{
+		"language_code": "khua_bung",
+		"language_title": "Khua Bung"
+	},
+	{
+		"language_code": "kigogo",
+		"language_title": "Kigogo"
+	},
+	{
+		"language_code": "kinnauri_pahari",
+		"language_title": "Kinnauri Pahari"
+	},
+	{
+		"language_code": "kinyarwanda",
+		"language_title": "Kinyarwanda"
+	},
+	{
+		"language_code": "kiraman",
+		"language_title": "Kiraman"
+	},
+	{
+		"language_code": "kiribati",
+		"language_title": "Kiribati"
+	},
+	{
+		"language_code": "kisii",
+		"language_title": "Kisii"
+	},
+	{
+		"language_code": "klamu",
+		"language_title": "Klamu"
+	},
+	{
+		"language_code": "klon",
+		"language_title": "Klon"
+	},
+	{
+		"language_code": "koassa",
+		"language_title": "Koassa"
+	},
+	{
+		"language_code": "kobera",
+		"language_title": "Kobera"
+	},
+	{
+		"language_code": "kodi",
+		"language_title": "Kodi"
+	},
+	{
+		"language_code": "kokborok",
+		"language_title": "Kokborok"
+	},
+	{
+		"language_code": "kokowai",
+		"language_title": "Kokowai"
+	},
+	{
+		"language_code": "koloncucu",
+		"language_title": "Koloncucu"
+	},
+	{
+		"language_code": "kombai",
+		"language_title": "Kombai"
+	},
+	{
+		"language_code": "komering",
+		"language_title": "Komering"
+	},
+	{
+		"language_code": "komi",
+		"language_title": "Komi"
+	},
+	{
+		"language_code": "komodo",
+		"language_title": "Komodo"
+	},
+	{
+		"language_code": "kone_konee",
+		"language_title": "Kone-Konee"
+	},
+	{
+		"language_code": "koneraw",
+		"language_title": "Koneraw"
+	},
+	{
+		"language_code": "konjo",
+		"language_title": "Konjo"
+	},
+	{
+		"language_code": "kopkaka",
+		"language_title": "Kopkaka"
+	},
+	{
+		"language_code": "korean",
+		"language_title": "Korean"
+	},
+	{
+		"language_code": "korku",
+		"language_title": "Korku"
+	},
+	{
+		"language_code": "kosrean",
+		"language_title": "Kosrean"
+	},
+	{
+		"language_code": "kota_agung",
+		"language_title": "Kota Agung"
+	},
+	{
+		"language_code": "kota_baru",
+		"language_title": "Kota Baru"
+	},
+	{
+		"language_code": "kota_bumi",
+		"language_title": "Kota Bumi"
+	},
+	{
+		"language_code": "krui",
+		"language_title": "Krui"
+	},
+	{
+		"language_code": "kuanua",
+		"language_title": "Kuanua"
+	},
+	{
+		"language_code": "kuh_chah",
+		"language_title": "Kuh Chah"
+	},
+	{
+		"language_code": "kuhin",
+		"language_title": "Kuhin"
+	},
+	{
+		"language_code": "kuhya_maragoli",
+		"language_title": "Kuhya Maragoli"
+	},
+	{
+		"language_code": "kui",
+		"language_title": "Kui"
+	},
+	{
+		"language_code": "kulatera",
+		"language_title": "Kulatera"
+	},
+	{
+		"language_code": "kulawi",
+		"language_title": "Kulawi"
+	},
+	{
+		"language_code": "kulisusu",
+		"language_title": "Kulisusu"
+	},
+	{
+		"language_code": "kulvi",
+		"language_title": "Kulvi"
+	},
+	{
+		"language_code": "kumam",
+		"language_title": "Kumam"
+	},
+	{
+		"language_code": "kunda",
+		"language_title": "Kunda"
+	},
+	{
+		"language_code": "kupang",
+		"language_title": "Kupang"
+	},
+	{
+		"language_code": "kurdish",
+		"language_title": "Kurdish"
+	},
+	{
+		"language_code": "kurk",
+		"language_title": "Kurk"
+	},
+	{
+		"language_code": "kurkhu",
+		"language_title": "Kurkhu"
+	},
+	{
+		"language_code": "kutai",
+		"language_title": "Kutai"
+	},
+	{
+		"language_code": "kwansu",
+		"language_title": "Kwansu"
+	},
+	{
+		"language_code": "kwanyama_oshiwambo",
+		"language_title": "Kwanyama Oshiwambo"
+	},
+	{
+		"language_code": "kwara_ae",
+		"language_title": "Kwara'ae"
+	},
+	{
+		"language_code": "kwerba",
+		"language_title": "Kwerba"
+	},
+	{
+		"language_code": "kwesten",
+		"language_title": "Kwesten"
+	},
+	{
+		"language_code": "kyrgyz",
+		"language_title": "Kyrgyz"
+	},
+	{
+		"language_code": "labala",
+		"language_title": "Labala"
+	},
+	{
+		"language_code": "lachet",
+		"language_title": "Lachet"
+	},
+	{
+		"language_code": "lahat",
+		"language_title": "Lahat"
+	},
+	{
+		"language_code": "laiyolo",
+		"language_title": "Laiyolo"
+	},
+	{
+		"language_code": "laksado",
+		"language_title": "Laksado"
+	},
+	{
+		"language_code": "laloda",
+		"language_title": "Laloda"
+	},
+	{
+		"language_code": "lamaholot",
+		"language_title": "Lamaholot"
+	},
+	{
+		"language_code": "lamandau",
+		"language_title": "Lamandau"
+	},
+	{
+		"language_code": "lamboya",
+		"language_title": "Lamboya"
+	},
+	{
+		"language_code": "lampung",
+		"language_title": "Lampung"
+	},
+	{
+		"language_code": "lani",
+		"language_title": "Lani"
+	},
+	{
+		"language_code": "lau_solomon",
+		"language_title": "Lau Solomon"
+	},
+	{
+		"language_code": "lawangan",
+		"language_title": "Lawangan"
+	},
+	{
+		"language_code": "lekon",
+		"language_title": "Lekon"
+	},
+	{
+		"language_code": "lematang",
+		"language_title": "Lematang"
+	},
+	{
+		"language_code": "lembak",
+		"language_title": "Lembak"
+	},
+	{
+		"language_code": "lemolang",
+		"language_title": "Lemolang"
+	},
+	{
+		"language_code": "lengilu",
+		"language_title": "Lengilu"
+	},
+	{
+		"language_code": "lenje",
+		"language_title": "Lenje"
+	},
+	{
+		"language_code": "leti",
+		"language_title": "Leti"
+	},
+	{
+		"language_code": "lewuka",
+		"language_title": "Lewuka"
+	},
+	{
+		"language_code": "light_shona",
+		"language_title": "Light Shona"
+	},
+	{
+		"language_code": "lio",
+		"language_title": "Lio"
+	},
+	{
+		"language_code": "lohar",
+		"language_title": "Lohar"
+	},
+	{
+		"language_code": "lokaa",
+		"language_title": "Lokaa"
+	},
+	{
+		"language_code": "loloda",
+		"language_title": "Loloda"
+	},
+	{
+		"language_code": "lona",
+		"language_title": "Lona"
+	},
+	{
+		"language_code": "long_tlang",
+		"language_title": "Long Tlang"
+	},
+	{
+		"language_code": "lubu",
+		"language_title": "Lubu"
+	},
+	{
+		"language_code": "lugbara",
+		"language_title": "Lugbara"
+	},
+	{
+		"language_code": "luhya_wanga",
+		"language_title": "Luhya Wanga"
+	},
+	{
+		"language_code": "lumoli",
+		"language_title": "Lumoli"
+	},
+	{
+		"language_code": "lundayeh",
+		"language_title": "Lundayeh"
+	},
+	{
+		"language_code": "lung_cawipi",
+		"language_title": "Lung Cawipi"
+	},
+	{
+		"language_code": "luo",
+		"language_title": "Luo"
+	},
+	{
+		"language_code": "lura",
+		"language_title": "Lura"
+	},
+	{
+		"language_code": "lusoga",
+		"language_title": "Lusoga"
+	},
+	{
+		"language_code": "luwu",
+		"language_title": "Luwu"
+	},
+	{
+		"language_code": "maanyan",
+		"language_title": "Maanyan"
+	},
+	{
+		"language_code": "maba",
+		"language_title": "Maba"
+	},
+	{
+		"language_code": "madura",
+		"language_title": "Madura"
+	},
+	{
+		"language_code": "magahi",
+		"language_title": "Magahi"
+	},
+	{
+		"language_code": "maithili",
+		"language_title": "Maithili"
+	},
+	{
+		"language_code": "majhi",
+		"language_title": "Majhi"
+	},
+	{
+		"language_code": "makasar",
+		"language_title": "Makasar"
+	},
+	{
+		"language_code": "makian_barat",
+		"language_title": "Makian Barat"
+	},
+	{
+		"language_code": "makian_timur",
+		"language_title": "Makian Timur"
+	},
+	{
+		"language_code": "makki",
+		"language_title": "Makki"
+	},
+	{
+		"language_code": "maklew",
+		"language_title": "Maklew"
+	},
+	{
+		"language_code": "malagasy",
+		"language_title": "Malagasy"
+	},
+	{
+		"language_code": "malang",
+		"language_title": "Malang"
+	},
+	{
+		"language_code": "malay",
+		"language_title": "Malay"
+	},
+	{
+		"language_code": "malayalam",
+		"language_title": "Malayalam"
+	},
+	{
+		"language_code": "mali",
+		"language_title": "Mali"
+	},
+	{
+		"language_code": "malvani",
+		"language_title": "Malvani"
+	},
+	{
+		"language_code": "malvi",
+		"language_title": "Malvi"
+	},
+	{
+		"language_code": "malwani",
+		"language_title": "Malwani"
+	},
+	{
+		"language_code": "mamala",
+		"language_title": "Mamala"
+	},
+	{
+		"language_code": "mamasa",
+		"language_title": "Mamasa"
+	},
+	{
+		"language_code": "mambora",
+		"language_title": "Mambora"
+	},
+	{
+		"language_code": "mamuju",
+		"language_title": "Mamuju"
+	},
+	{
+		"language_code": "manado",
+		"language_title": "Manado"
+	},
+	{
+		"language_code": "mandar",
+		"language_title": "Mandar"
+	},
+	{
+		"language_code": "mandarin",
+		"language_title": "Mandarin"
+	},
+	{
+		"language_code": "mandiyali",
+		"language_title": "Mandiyali"
+	},
+	{
+		"language_code": "manghali",
+		"language_title": "Manghali"
+	},
+	{
+		"language_code": "mangole",
+		"language_title": "Mangole"
+	},
+	{
+		"language_code": "manipa",
+		"language_title": "Manipa"
+	},
+	{
+		"language_code": "manner",
+		"language_title": "Manner"
+	},
+	{
+		"language_code": "mantiyar",
+		"language_title": "Mantiyar"
+	},
+	{
+		"language_code": "manttir",
+		"language_title": "Manttir"
+	},
+	{
+		"language_code": "manuhing",
+		"language_title": "Manuhing"
+	},
+	{
+		"language_code": "manyika",
+		"language_title": "Manyika"
+	},
+	{
+		"language_code": "mara",
+		"language_title": "Mara"
+	},
+	{
+		"language_code": "marahaban",
+		"language_title": "Marahaban"
+	},
+	{
+		"language_code": "marathi",
+		"language_title": "Marathi"
+	},
+	{
+		"language_code": "marghi",
+		"language_title": "Marghi"
+	},
+	{
+		"language_code": "maroon",
+		"language_title": "Maroon"
+	},
+	{
+		"language_code": "martapura",
+		"language_title": "Martapura"
+	},
+	{
+		"language_code": "massenrempulu",
+		"language_title": "Massenrempulu"
+	},
+	{
+		"language_code": "masserenpulu",
+		"language_title": "Masserenpulu"
+	},
+	{
+		"language_code": "mauritius_creole",
+		"language_title": "Mauritius Creole"
+	},
+	{
+		"language_code": "mayau",
+		"language_title": "Mayau"
+	},
+	{
+		"language_code": "medumba",
+		"language_title": "Medumba"
+	},
+	{
+		"language_code": "mee",
+		"language_title": "Mee"
+	},
+	{
+		"language_code": "mekongga",
+		"language_title": "Mekongga"
+	},
+	{
+		"language_code": "melayu",
+		"language_title": "Melayu"
+	},
+	{
+		"language_code": "melayu_kalimantan_barat",
+		"language_title": "Melayu Kalimantan Barat"
+	},
+	{
+		"language_code": "melayu_kalimantan",
+		"language_title": "Melayu Kalimantan"
+	},
+	{
+		"language_code": "melayu_kupang",
+		"language_title": "Melayu Kupang"
+	},
+	{
+		"language_code": "melayu_manado",
+		"language_title": "Melayu Manado"
+	},
+	{
+		"language_code": "melayu_papua",
+		"language_title": "Melayu Papua"
+	},
+	{
+		"language_code": "memale",
+		"language_title": "Memale"
+	},
+	{
+		"language_code": "mendawai",
+		"language_title": "Mendawai"
+	},
+	{
+		"language_code": "mentawai",
+		"language_title": "Mentawai"
+	},
+	{
+		"language_code": "mentaya_sampit",
+		"language_title": "Mentaya Sampit"
+	},
+	{
+		"language_code": "mewari",
+		"language_title": "Mewari"
+	},
+	{
+		"language_code": "mgbolizhia",
+		"language_title": "Mgbolizhia"
+	},
+	{
+		"language_code": "milano",
+		"language_title": "Milano"
+	},
+	{
+		"language_code": "minahasa",
+		"language_title": "Minahasa"
+	},
+	{
+		"language_code": "minang",
+		"language_title": "Minang"
+	},
+	{
+		"language_code": "moam",
+		"language_title": "Moam"
+	},
+	{
+		"language_code": "moba",
+		"language_title": "Moba"
+	},
+	{
+		"language_code": "modole",
+		"language_title": "Modole"
+	},
+	{
+		"language_code": "mongodow",
+		"language_title": "Mongodow"
+	},
+	{
+		"language_code": "mongolian",
+		"language_title": "Mongolian"
+	},
+	{
+		"language_code": "moore",
+		"language_title": "Moore"
+	},
+	{
+		"language_code": "mori",
+		"language_title": "Mori"
+	},
+	{
+		"language_code": "mori_toroda",
+		"language_title": "Mori Toroda"
+	},
+	{
+		"language_code": "morotoi",
+		"language_title": "Morotoi"
+	},
+	{
+		"language_code": "mozambican_portuguese",
+		"language_title": "Mozambican Portuguese"
+	},
+	{
+		"language_code": "mro",
+		"language_title": "Mro"
+	},
+	{
+		"language_code": "muna",
+		"language_title": "Muna"
+	},
+	{
+		"language_code": "mundang",
+		"language_title": "Mundang"
+	},
+	{
+		"language_code": "mundari",
+		"language_title": "Mundari"
+	},
+	{
+		"language_code": "muslim_bengoli",
+		"language_title": "Muslim Bengoli"
+	},
+	{
+		"language_code": "myene",
+		"language_title": "Myene"
+	},
+	{
+		"language_code": "nagpuri",
+		"language_title": "Nagpuri"
+	},
+	{
+		"language_code": "ndau",
+		"language_title": "Ndau"
+	},
+	{
+		"language_code": "nembe",
+		"language_title": "Nembe"
+	},
+	{
+		"language_code": "nengone",
+		"language_title": "Nengone"
+	},
+	{
+		"language_code": "ngada",
+		"language_title": "Ngada"
+	},
+	{
+		"language_code": "ngalum",
+		"language_title": "Ngalum"
+	},
+	{
+		"language_code": "ngas",
+		"language_title": "Ngas"
+	},
+	{
+		"language_code": "ngbugu",
+		"language_title": "Ngbugu"
+	},
+	{
+		"language_code": "nggem",
+		"language_title": "Nggem"
+	},
+	{
+		"language_code": "nias",
+		"language_title": "Nias"
+	},
+	{
+		"language_code": "nimari",
+		"language_title": "Nimari"
+	},
+	{
+		"language_code": "norwegian",
+		"language_title": "Norwegian"
+	},
+	{
+		"language_code": "nuaulu",
+		"language_title": "Nuaulu"
+	},
+	{
+		"language_code": "nugunu",
+		"language_title": "Nugunu"
+	},
+	{
+		"language_code": "nupe",
+		"language_title": "Nupe"
+	},
+	{
+		"language_code": "odiya",
+		"language_title": "Odiya"
+	},
+	{
+		"language_code": "okpuge",
+		"language_title": "Okpuge"
+	},
+	{
+		"language_code": "oriya",
+		"language_title": "Oriya"
+	},
+	{
+		"language_code": "oromiffa",
+		"language_title": "Oromiffa"
+	},
+	{
+		"language_code": "oron",
+		"language_title": "Oron"
+	},
+	{
+		"language_code": "otjiherero",
+		"language_title": "Otjiherero"
+	},
+	{
+		"language_code": "pahari",
+		"language_title": "Pahari"
+	},
+	{
+		"language_code": "palamu",
+		"language_title": "Palamu"
+	},
+	{
+		"language_code": "palli",
+		"language_title": "Palli"
+	},
+	{
+		"language_code": "panchpargania",
+		"language_title": "Panchpargania"
+	},
+	{
+		"language_code": "papiamentu",
+		"language_title": "Papiamentu"
+	},
+	{
+		"language_code": "pardhi",
+		"language_title": "Pardhi"
+	},
+	{
+		"language_code": "parli_hari",
+		"language_title": "Parli Hari"
+	},
+	{
+		"language_code": "pathrud",
+		"language_title": "Pathrud"
+	},
+	{
+		"language_code": "pawori",
+		"language_title": "Pawori"
+	},
+	{
+		"language_code": "pelauw",
+		"language_title": "Pelauw"
+	},
+	{
+		"language_code": "phai_khua",
+		"language_title": "Phai Khua"
+	},
+	{
+		"language_code": "phai_pha",
+		"language_title": "Phai Pha"
+	},
+	{
+		"language_code": "pisa",
+		"language_title": "Pisa"
+	},
+	{
+		"language_code": "polish",
+		"language_title": "Polish"
+	},
+	{
+		"language_code": "portuguese",
+		"language_title": "Portuguese"
+	},
+	{
+		"language_code": "poumai",
+		"language_title": "Poumai"
+	},
+	{
+		"language_code": "punjabi",
+		"language_title": "Punjabi"
+	},
+	{
+		"language_code": "rajvanshi",
+		"language_title": "Rajvanshi"
+	},
+	{
+		"language_code": "rasawa",
+		"language_title": "Rasawa"
+	},
+	{
+		"language_code": "reng_caa",
+		"language_title": "Reng Caa"
+	},
+	{
+		"language_code": "riantana",
+		"language_title": "Riantana"
+	},
+	{
+		"language_code": "ribun",
+		"language_title": "Ribun"
+	},
+	{
+		"language_code": "roma_kannada",
+		"language_title": "Roma Kannada"
+	},
+	{
+		"language_code": "roman_konkani",
+		"language_title": "Roman Konkani"
+	},
+	{
+		"language_code": "romanian",
+		"language_title": "Romanian"
+	},
+	{
+		"language_code": "russian",
+		"language_title": "Russian"
+	},
+	{
+		"language_code": "russian_tuwa",
+		"language_title": "Russian Tuwa"
+	},
+	{
+		"language_code": "sadri",
+		"language_title": "Sadri"
+	},
+	{
+		"language_code": "sambalpuri",
+		"language_title": "Sambalpuri"
+	},
+	{
+		"language_code": "samoan",
+		"language_title": "Samoan"
+	},
+	{
+		"language_code": "sangali",
+		"language_title": "Sangali"
+	},
+	{
+		"language_code": "santhali",
+		"language_title": "Santhali"
+	},
+	{
+		"language_code": "sapera",
+		"language_title": "Sapera"
+	},
+	{
+		"language_code": "sashti",
+		"language_title": "Sashti"
+	},
+	{
+		"language_code": "sekhawati",
+		"language_title": "Sekhawati"
+	},
+	{
+		"language_code": "sepedi",
+		"language_title": "Sepedi"
+	},
+	{
+		"language_code": "serbian",
+		"language_title": "Serbian"
+	},
+	{
+		"language_code": "serbian_latinic",
+		"language_title": "Serbian Latinic"
+	},
+	{
+		"language_code": "sesotho",
+		"language_title": "Sesotho"
+	},
+	{
+		"language_code": "setswana",
+		"language_title": "Setswana"
+	},
+	{
+		"language_code": "setswapong",
+		"language_title": "Setswapong"
+	},
+	{
+		"language_code": "shanjo",
+		"language_title": "Shanjo"
+	},
+	{
+		"language_code": "sheng",
+		"language_title": "Sheng"
+	},
+	{
+		"language_code": "shona",
+		"language_title": "Shona"
+	},
+	{
+		"language_code": "shortland",
+		"language_title": "Shortland"
+	},
+	{
+		"language_code": "siang",
+		"language_title": "Siang"
+	},
+	{
+		"language_code": "sifwe",
+		"language_title": "Sifwe"
+	},
+	{
+		"language_code": "sikwandi",
+		"language_title": "Sikwandi"
+	},
+	{
+		"language_code": "sikwangwa",
+		"language_title": "Sikwangwa"
+	},
+	{
+		"language_code": "siswati",
+		"language_title": "Siswati"
+	},
+	{
+		"language_code": "slovenian",
+		"language_title": "Slovenian"
+	},
+	{
+		"language_code": "soli",
+		"language_title": "Soli"
+	},
+	{
+		"language_code": "solomon_pidgin",
+		"language_title": "Solomon Pidgin"
+	},
+	{
+		"language_code": "somahai",
+		"language_title": "Somahai"
+	},
+	{
+		"language_code": "somali",
+		"language_title": "Somali"
+	},
+	{
+		"language_code": "south_africa_ndebele",
+		"language_title": "South Africa Ndebele"
+	},
+	{
+		"language_code": "south_tanna",
+		"language_title": "South Tanna"
+	},
+	{
+		"language_code": "spanish",
+		"language_title": "Spanish"
+	},
+	{
+		"language_code": "sran_tongo",
+		"language_title": "Sran Tongo"
+	},
+	{
+		"language_code": "subiya",
+		"language_title": "Subiya"
+	},
+	{
+		"language_code": "sunda",
+		"language_title": "Sunda"
+	},
+	{
+		"language_code": "surinam",
+		"language_title": "Surinam"
+	},
+	{
+		"language_code": "surjapuri",
+		"language_title": "Surjapuri"
+	},
+	{
+		"language_code": "swahili",
+		"language_title": "Swahili"
+	},
+	{
+		"language_code": "swaka",
+		"language_title": "Swaka"
+	},
+	{
+		"language_code": "swedish",
+		"language_title": "Swedish"
+	},
+	{
+		"language_code": "taaw",
+		"language_title": "Taaw"
+	},
+	{
+		"language_code": "taboyan",
+		"language_title": "Taboyan"
+	},
+	{
+		"language_code": "tagalog",
+		"language_title": "Tagalog"
+	},
+	{
+		"language_code": "tamagario",
+		"language_title": "Tamagario"
+	},
+	{
+		"language_code": "tamil",
+		"language_title": "Tamil "
+	},
+	{
+		"language_code": "tamnim",
+		"language_title": "Tamnim"
+	},
+	{
+		"language_code": "tanah",
+		"language_title": "Tanah"
+	},
+	{
+		"language_code": "tanimbar",
+		"language_title": "Tanimbar"
+	},
+	{
+		"language_code": "tanna",
+		"language_title": "Tanna"
+	},
+	{
+		"language_code": "tawoyan",
+		"language_title": "Tawoyan"
+	},
+	{
+		"language_code": "telugu",
+		"language_title": "Telugu "
+	},
+	{
+		"language_code": "telugu",
+		"language_title": "Telugu"
+	},
+	{
+		"language_code": "terjemahan",
+		"language_title": "Terjemahan"
+	},
+	{
+		"language_code": "ternate",
+		"language_title": "Ternate"
+	},
+	{
+		"language_code": "thadou",
+		"language_title": "Thadou"
+	},
+	{
+		"language_code": "thadou_kuki",
+		"language_title": "Thadou Kuki"
+	},
+	{
+		"language_code": "thai",
+		"language_title": "Thai"
+	},
+	{
+		"language_code": "tialo",
+		"language_title": "Tialo"
+	},
+	{
+		"language_code": "tidung",
+		"language_title": "Tidung"
+	},
+	{
+		"language_code": "tigrigna",
+		"language_title": "Tigrigna"
+	},
+	{
+		"language_code": "tiphul",
+		"language_title": "Tiphul"
+	},
+	{
+		"language_code": "tiv",
+		"language_title": "Tiv"
+	},
+	{
+		"language_code": "tobelo",
+		"language_title": "Tobelo"
+	},
+	{
+		"language_code": "togutul",
+		"language_title": "Togutul"
+	},
+	{
+		"language_code": "tolaki",
+		"language_title": "Tolaki"
+	},
+	{
+		"language_code": "tombolu",
+		"language_title": "Tombolu"
+	},
+	{
+		"language_code": "tomini",
+		"language_title": "Tomini"
+	},
+	{
+		"language_code": "tongan",
+		"language_title": "Tongan"
+	},
+	{
+		"language_code": "tonsawang",
+		"language_title": "Tonsawang"
+	},
+	{
+		"language_code": "tonsea",
+		"language_title": "Tonsea"
+	},
+	{
+		"language_code": "toraja",
+		"language_title": "Toraja"
+	},
+	{
+		"language_code": "totoli",
+		"language_title": "Totoli"
+	},
+	{
+		"language_code": "tshiluba",
+		"language_title": "Tshiluba"
+	},
+	{
+		"language_code": "tsokwambo",
+		"language_title": "Tsokwambo"
+	},
+	{
+		"language_code": "tulehu",
+		"language_title": "Tulehu"
+	},
+	{
+		"language_code": "tunjung",
+		"language_title": "Tunjung"
+	},
+	{
+		"language_code": "turkish",
+		"language_title": "Turkish"
+	},
+	{
+		"language_code": "turkmen",
+		"language_title": "Turkmen"
+	},
+	{
+		"language_code": "tuwa",
+		"language_title": "Tuwa"
+	},
+	{
+		"language_code": "ugi",
+		"language_title": "Ugi"
+	},
+	{
+		"language_code": "ukrainian",
+		"language_title": "Ukrainian"
+	},
+	{
+		"language_code": "uzbek",
+		"language_title": "Uzbek"
+	},
+	{
+		"language_code": "vadar",
+		"language_title": "Vadar"
+	},
+	{
+		"language_code": "vagadi",
+		"language_title": "Vagadi"
+	},
+	{
+		"language_code": "vaiphei",
+		"language_title": "Vaiphei"
+	},
+	{
+		"language_code": "venda",
+		"language_title": "Venda"
+	},
+	{
+		"language_code": "wagri",
+		"language_title": "Wagri"
+	},
+	{
+		"language_code": "wai_apu",
+		"language_title": "Wai Apu"
+	},
+	{
+		"language_code": "wai",
+		"language_title": "Wai"
+	},
+	{
+		"language_code": "wainunu_bau",
+		"language_title": "Wainunu Bau"
+	},
+	{
+		"language_code": "waitina",
+		"language_title": "Waitina"
+	},
+	{
+		"language_code": "wala",
+		"language_title": "Wala"
+	},
+	{
+		"language_code": "wambon",
+		"language_title": "Wambon"
+	},
+	{
+		"language_code": "wanggom",
+		"language_title": "Wanggom"
+	},
+	{
+		"language_code": "waray",
+		"language_title": "Waray"
+	},
+	{
+		"language_code": "warkay",
+		"language_title": "Warkay"
+	},
+	{
+		"language_code": "wayoli",
+		"language_title": "Wayoli"
+	},
+	{
+		"language_code": "weda",
+		"language_title": "Weda"
+	},
+	{
+		"language_code": "welsh",
+		"language_title": "Welsh"
+	},
+	{
+		"language_code": "wemale",
+		"language_title": "Wemale"
+	},
+	{
+		"language_code": "wolio",
+		"language_title": "Wolio"
+	},
+	{
+		"language_code": "wotu",
+		"language_title": "Wotu"
+	},
+	{
+		"language_code": "xhosa",
+		"language_title": "Xhosa"
+	},
+	{
+		"language_code": "xitsonga",
+		"language_title": "Xitsonga"
+	},
+	{
+		"language_code": "yaben",
+		"language_title": "Yaben"
+	},
+	{
+		"language_code": "yacouba",
+		"language_title": "Yacouba"
+	},
+	{
+		"language_code": "yair",
+		"language_title": "Yair"
+	},
+	{
+		"language_code": "yaqay",
+		"language_title": "Yaqay"
+	},
+	{
+		"language_code": "yauwa",
+		"language_title": "Yauwa"
+	},
+	{
+		"language_code": "yey",
+		"language_title": "Yey"
+	},
+	{
+		"language_code": "yonggom",
+		"language_title": "Yonggom"
+	},
+	{
+		"language_code": "yoruba",
+		"language_title": "Yoruba"
+	},
+	{
+		"language_code": "zambian_chewa",
+		"language_title": "Zambian Chewa"
+	},
+	{
+		"language_code": "zambian_tonga",
+		"language_title": "Zambian Tonga"
+	},
+	{
+		"language_code": "zimbabwean_changani",
+		"language_title": "Zimbabwean Changani"
+	},
+	{
+		"language_code": "zimbabwean_chewa",
+		"language_title": "Zimbabwean Chewa"
+	},
+	{
+		"language_code": "zimbabwean_ikalanga",
+		"language_title": "Zimbabwean Ikalanga"
+	},
+	{
+		"language_code": "zimbabwean_nambya",
+		"language_title": "Zimbabwean Nambya"
+	},
+	{
+		"language_code": "zimbabwean_sena",
+		"language_title": "Zimbabwean Sena"
+	},
+	{
+		"language_code": "zimbabwean_tonga",
+		"language_title": "Zimbabwean Tonga"
+	},
+	{
+		"language_code": "zimbabwean_venda",
+		"language_title": "Zimbabwean Venda"
+	},
+	{
+		"language_code": "zimbabwean_xhosa",
+		"language_title": "Zimbabwean Xhosa"
+	},
+	{
+		"language_code": "zotung",
+		"language_title": "Zotung"
+	},
+	{
+		"language_code": "zulu",
+		"language_title": "Zulu"
+	},
+	{
+		"language_code": "zyphe",
+		"language_title": "Zyphe"
+	}
+
+]}

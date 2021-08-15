@@ -2,6 +2,8 @@ import 'package:MyRhapsody/presentation/core/customStyles.dart';
 import 'package:MyRhapsody/presentation/empty-state/empty_state.dart';
 import 'package:MyRhapsody/presentation/home/pdfReader.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
+import 'package:MyRhapsody/repositories/models/LanguageModel/bloc/language_bloc.dart';
+import 'package:MyRhapsody/repositories/models/LanguageModel/language_model.dart';
 import 'package:MyRhapsody/repositories/models/RhapsodyModel/rhapsodyEntity.dart';
 import 'package:MyRhapsody/repositories/models/RhapsodyModel/rhapsodyModel.dart';
 import 'package:MyRhapsody/services/authService.dart';
@@ -9,6 +11,7 @@ import 'package:MyRhapsody/theme/styles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -33,27 +36,44 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          DropdownButton<String>(
-            icon: Row(
-              children: [
-                Text('English', style: TextStyle(color: Colors.white)),
-                Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
-                )
-              ],
+          Container(
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.5,
+            child: BlocBuilder<LanguageBloc, LanguageState>(
+              builder: (context, state) {
+                if (state is LoadedLanguages) {
+                  return DropdownButton<String>(
+                    icon: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(state.currentLanguage.languageTitle,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(color: Colors.white)),
+                        Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    items: state.languages.map((LanguageModel language) {
+                      return DropdownMenuItem<String>(
+                        value: language.languageCode,
+                        child: new Text(
+                          language.languageTitle,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (_) {},
+                  );
+                } else {
+                  return Container();
+                }
+              },
             ),
-            items: <String>['English', 'French', 'Arabic', 'Hausa']
-                .map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: new Text(
-                  value,
-                  style: TextStyle(color: Colors.white),
-                ),
-              );
-            }).toList(),
-            onChanged: (_) {},
           ),
           FlatButton(
             onPressed: () {
@@ -65,8 +85,14 @@ class HomePage extends StatelessWidget {
                       backgroundColor: Styles.colorSecondaryLight,
                       title: new Text("Settings"),
                       content: Container(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.1,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.8,
                         child: Column(
                           children: [
                             Text(
@@ -75,7 +101,18 @@ class HomePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 TextButton(
-                                    onPressed: () {}, child: Text('Logout')),
+                                    onPressed: () {
+                                      // widget._authService.signOut();
+                                      //Phoenix();
+                                      FirebaseAuth.instance.signOut();
+                                      BlocProvider.of<AuthenticationBloc>(
+                                          context).add(
+                                        AuthenticationLoggedOut(context),
+                                      );
+
+                                      Navigator.pushNamed(
+                                          context, '/signInPage');
+                                    }, child: Text('Logout')),
                                 TextButton(
                                     onPressed: () {
                                       showAboutDialog(
@@ -88,7 +125,7 @@ class HomePage extends StatelessWidget {
                                             height: 40,
                                           ),
                                           applicationLegalese:
-                                              'MyRhapsody is a property of Kings Tech,'
+                                          'MyRhapsody is a property of Kings Tech,'
                                               'made during the qubators Hackathon. Thank you');
                                     },
                                     child: Text('About Us'))
@@ -106,15 +143,17 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
-        title: Row(
-          children: [
-            Image.asset(
-              "assets/logos/MyRhapsody.png",
-              fit: BoxFit.scaleDown,
-              height: 40,
-            ),
-            Text("MyRhapsody"),
-          ],
+        title: Container(
+          child: Row(
+            children: [
+              Image.asset(
+                "assets/logos/MyRhapsody.png",
+                fit: BoxFit.scaleDown,
+                height: 40,
+              ),
+              Text("MyRhapsody"),
+            ],
+          ),
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -123,190 +162,208 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Styles.colorSecondary,
-        elevation: 0.0,
       ),
       backgroundColor: Styles.colorSecondaryLight,
       body: SingleChildScrollView(
         child: (true)
             ? Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(padding: EdgeInsets.all(8)),
-                    Text(
-                      'Welcome ${FirebaseAuth.instance.currentUser.displayName}',
-                      style: Styles.textHeadLine2,
-                    ),
-                    Padding(padding: EdgeInsets.all(16)),
-                    Text(
-                      'Continue Reading',
-                      style: Styles.textHeadLine3,
-                    ),
-                    Padding(padding: EdgeInsets.all(8)),
-                    InkWell(
-                      onTap: () async {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => PDFViewerCachedFromUrl(
-                                    url: RorCardModel.rorUrl4,
-                                  )),
-                        );
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.22,
-                        child: Row(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(padding: EdgeInsets.all(8)),
+              Text(
+                'Welcome ${FirebaseAuth.instance.currentUser.displayName}',
+                style: Styles.textHeadLine2,
+              ),
+              Padding(padding: EdgeInsets.all(16)),
+              Text(
+                'Continue Reading',
+                style: Styles.textHeadLine3,
+              ),
+              Padding(padding: EdgeInsets.all(8)),
+              InkWell(
+                onTap: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) =>
+                            PDFViewerCachedFromUrl(
+                              url: RorCardModel.rorUrl4,
+                            )),
+                  );
+                },
+                child: Container(
+                  height: MediaQuery
+                      .of(context)
+                      .size
+                      .height * 0.22,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Styles.colorPlaceHolderBarDark,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191'),
+                          ),
+                        ),
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.3,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Styles.colorPlaceHolderBarDark,
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                      'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191'),
-                                ),
-                              ),
-                              width: MediaQuery.of(context).size.width * 0.3,
-                              height: MediaQuery.of(context).size.height * 0.2,
+                            Text(
+                              'Rhapsody August Issue',
+                              style: Styles.textRegularMedium,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Rhapsody August Issue',
-                                    style: Styles.textRegularMedium,
-                                  ),
-                                  Padding(padding: EdgeInsets.all(4)),
-                                  Text(
-                                    '2 days ago',
-                                    style: Styles.textDescriptiveItems,
-                                  ),
-                                  Padding(padding: EdgeInsets.all(2)),
-                                  Padding(padding: EdgeInsets.all(8)),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        CupertinoIcons.arrow_down_circle_fill,
-                                        size: 18,
-                                        color: Styles.colorPrimary,
-                                      ),
-                                      Text(
-                                        'English',
-                                        style: Styles.textDescriptiveItems,
-                                      ),
-                                    ],
-                                  ),
-                                  Text(
-                                    'Page 15',
-                                    style: Styles.textDescriptiveItems,
-                                  ),
-                                  Padding(padding: EdgeInsets.all(6)),
-                                  TextButton(
-                                      style: Styles.primaryButtonStyle,
-                                      onPressed: () {},
-                                      child: Text(
-                                        'Continue',
-                                        style:
-                                            TextStyle(color: Styles.colorWhite),
-                                      )),
-                                ],
-                              ),
-                            )
+                            Padding(padding: EdgeInsets.all(4)),
+                            Text(
+                              '2 days ago',
+                              style: Styles.textDescriptiveItems,
+                            ),
+                            Padding(padding: EdgeInsets.all(2)),
+                            Padding(padding: EdgeInsets.all(8)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  CupertinoIcons.arrow_down_circle_fill,
+                                  size: 18,
+                                  color: Styles.colorPrimary,
+                                ),
+                                Text(
+                                  'English',
+                                  style: Styles.textDescriptiveItems,
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Page 15',
+                              style: Styles.textDescriptiveItems,
+                            ),
+                            Padding(padding: EdgeInsets.all(6)),
+                            TextButton(
+                                style: Styles.primaryButtonStyle,
+                                onPressed: () {},
+                                child: Text(
+                                  'Continue',
+                                  style:
+                                  TextStyle(color: Styles.colorWhite),
+                                )),
                           ],
                         ),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(16)),
-                    Text(
-                      'Latest Issues',
-                      style: Styles.textHeadLine3,
-                    ),
-                    Padding(padding: EdgeInsets.all(8)),
-                    Container(
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: List.generate(
-                            RorCardModel.sampleList.length,
-                            (index) => RorCard(
-                              model: RorCardModel.sampleList[index],
-                            ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(16)),
+              Text(
+                'Latest Issues',
+                style: Styles.textHeadLine3,
+              ),
+              Padding(padding: EdgeInsets.all(8)),
+              Container(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      RorCardModel.sampleList.length,
+                          (index) =>
+                          RorCard(
+                            model: RorCardModel.sampleList[index],
                           ),
-                        ),
-                      ),
                     ),
-                    Padding(padding: EdgeInsets.all(16)),
-                    Text(
-                      'Distribution Contacts',
-                      style: Styles.textHeadLine3,
-                    ),
-                    Padding(padding: EdgeInsets.all(8)),
-                    EmptyStateScreen(
-                      title: 'No distribution contacts',
-                      subTitle: 'Add contacts to enable Rhasphody distribution',
-                      assetImageUrl:
-                          'assets/emptyStates/distribution_contacts.png',
-                      actionButton: TextButton(
-                        onPressed: () {
-                          showDialog(
-                              barrierColor:
-                                  Styles.colorSecondary.withOpacity(0.9),
-                              context: context,
-                              builder: (BuildContext context) {
-                                return new AlertDialog(
-                                  backgroundColor: Styles.colorSecondaryLight,
-                                  content: Container(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.5,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.8,
-                                    child: Center(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'Create Contact',
-                                            style: Styles.textRegularMedium,
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(16)),
+              Text(
+                'Distribution Contacts',
+                style: Styles.textHeadLine3,
+              ),
+              Padding(padding: EdgeInsets.all(8)),
+              EmptyStateScreen(
+                title: 'No distribution contacts',
+                subTitle: 'Add contacts to enable Rhasphody distribution',
+                assetImageUrl:
+                'assets/emptyStates/distribution_contacts.png',
+                actionButton: TextButton(
+                  onPressed: () {
+                    showDialog(
+                        barrierColor:
+                        Styles.colorSecondary.withOpacity(0.4),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return new AlertDialog(
+                            backgroundColor: Styles.colorSecondaryLight,
+                            content: Container(
+                              height: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .height *
+                                  0.5,
+                              width:
+                              MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.8,
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Create Contact',
+                                      style: Styles.textRegularMedium,
+                                    ),
+                                    Text(
+                                        'Create contacts to easily distribute Rhaspody to users in different languages'),
+                                    ContactForm(),
+                                    Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                      children: [
+                                        TextButton(
+                                          onPressed: () {},
+                                          style:
+                                          Styles.secondaryButtonStyle,
+                                          child: Text(
+                                            'Save',
+                                            style: TextStyle(
+                                                color: Styles.colorWhite),
                                           ),
-                                          Text(
-                                              'Create contacts to easily distribute Rhaspody to users in different languages'),
-                                          Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                            children: [
-                                              TextButton(
-                                                onPressed: () {},
-                                                style:
-                                                    Styles.secondaryButtonStyle,
-                                                child: Text(
-                                                  'Save',
-                                                  style: TextStyle(
-                                                      color: Styles.colorWhite),
-                                                ),
-                                              ),
-                                              TextButton(
-                                                onPressed: () {},
-                                                style:
-                                                Styles.primaryButtonStyle,
-                                                child: Text(
-                                                  'Cancel',
-                                                  style: TextStyle(
-                                                      color: Styles.colorWhite),
-                                                ),
-                                              ),
-                                              /*TextButton(
+                                        ),
+                                        TextButton(
+                                          onPressed: () {},
+                                          style:
+                                          Styles.primaryButtonStyle,
+                                          child: Text(
+                                            'Cancel',
+                                            style: TextStyle(
+                                                color: Styles.colorWhite),
+                                          ),
+                                        ),
+                                        /*TextButton(
                                                 onPressed: () {},
                                                 style:
                                                     Styles.primaryButtonStyle,
@@ -316,38 +373,144 @@ class HomePage extends StatelessWidget {
                                                       color: Styles.colorWhite),
                                                 ),
                                               ),*/
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              });
-                        },
-                        style: Styles.primaryButtonStyle,
-                        child: Text(
-                          'Add Contact',
-                          style: TextStyle(color: Styles.colorWhite),
-                        ),
-                      ),
-                    )
-                    /*Container(
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        });
+                  },
+                  style: Styles.primaryButtonStyle,
+                  child: Text(
+                    'Add Contact',
+                    style: TextStyle(color: Styles.colorWhite),
+                  ),
+                ),
+              )
+              /*Container(
                      // color: Colors.grey,
                       height: MediaQuery.of(context).size.height * 0.3,
                       child: Center(
                         child: Image.asset('assets/emptyStates/distribution_contacts.png'),
                       ),
                     ),*/
-                  ],
-                ),
-              )
+            ],
+          ),
+        )
             : PlaceHolderHome(),
       ),
     );
   }
 }
 
+/// This is the stateful widget that the main application instantiates.
+class ContactForm extends StatefulWidget {
+  const ContactForm({Key key}) : super(key: key);
+
+  @override
+  State<ContactForm> createState() => _ContactFormState();
+}
+
+/// This is the private State class that goes with MyStatefulWidget.
+class _ContactFormState extends State<ContactForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  // String _currentSelectedValue = '';
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TextFormField(
+              decoration: const InputDecoration(
+                  hintText: 'Enter Contact Name',
+                  border: OutlineInputBorder()
+              ),
+              validator: (String value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
+            ),
+            Padding(padding: EdgeInsets.all(8)),
+            TextFormField(
+              decoration: const InputDecoration(
+                  hintText: 'Enter contact email',
+                  border: OutlineInputBorder()
+              ),
+              validator: (String value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
+            ),
+            Padding(padding: EdgeInsets.all(8)),
+            FormField<String>(
+              builder: (FormFieldState<String> state) {
+                return InputDecorator(
+                  decoration: InputDecoration(
+                      errorStyle:
+                      TextStyle(color: Colors.redAccent, fontSize: 16.0),
+                      hintText: 'Please select expense',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0))),
+                  //  isEmpty: _currentSelectedValue == '',
+                  child: BlocBuilder<LanguageBloc, LanguageState>(
+                      builder: (context, state) {
+                        if (state is LoadedLanguages) {
+                          return DropdownButtonHideUnderline(
+                            child: DropdownButton<String>(
+                              value: state.currentLanguage.languageCode,
+                              //state.currentLanguage.languageCode,
+                              isDense: true,
+                              onChanged: (String newValue) {
+                                /*          setState(() {
+              _currentSelectedValue = newValue;
+            //  state.didChange(newValue);
+            });*/
+                              },
+                              items: state.languages.map((LanguageModel lang) {
+                                return DropdownMenuItem<String>(
+                                  value: lang.languageCode,
+                                  child: Text(lang.languageTitle),
+                                );
+                              }).toList(),
+                            ),
+                          );
+                        } else {
+                          return Container();
+                        }
+                      }),
+                );
+              },
+            )
+            /*  Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Validate will return true if the form is valid, or false if
+                  // the form is invalid.
+                  if (_formKey.currentState.validate()) {
+                    // Process data.
+                  }
+                },
+                child: const Text('Submit'),
+              ),
+            ),*/
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class RorCardModel {
   final String title;
@@ -369,23 +532,23 @@ class RorCardModel {
     RorCardModel(
         title: 'MOUNT ARARAT, ROR AUGUST 2021 Issue',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fmay-ror-cover_300x_cropped_top.jpg?alt=media&token=d8adf8a6-fd47-48f5-b95b-abfdd69eb3fc'),
+        'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fmay-ror-cover_300x_cropped_top.jpg?alt=media&token=d8adf8a6-fd47-48f5-b95b-abfdd69eb3fc'),
     RorCardModel(
         title: 'ZACCHAEUS TREE, ROR July 2021 Issue',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fror-july-2021.jpeg?alt=media&token=eab0fd3b-138d-4bef-b886-e83c1317caaa'),
+        'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fror-july-2021.jpeg?alt=media&token=eab0fd3b-138d-4bef-b886-e83c1317caaa'),
     RorCardModel(
         title: 'MOUNT OF TEMPTATION, ROR June 2021 Issue',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191'),
+        'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191'),
     RorCardModel(
         title: 'VIA DOLOROSA, ROR May 2021 Issue',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fmay-ror-cover_300x_cropped_top.jpg?alt=media&token=d8adf8a6-fd47-48f5-b95b-abfdd69eb3fc'),
+        'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2Fmay-ror-cover_300x_cropped_top.jpg?alt=media&token=d8adf8a6-fd47-48f5-b95b-abfdd69eb3fc'),
     RorCardModel(
         title: 'ZACCHAEUS TREE, ROR July 2021 Issue',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191')
+        'https://firebasestorage.googleapis.com/v0/b/myrhapsody.appspot.com/o/images%2F16510_junecover-min.png?alt=media&token=4fe6d24f-9fa0-4d7a-abe1-e7d85fd73191')
   ];
 }
 
@@ -404,7 +567,8 @@ class RorCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (_) => PDFViewerCachedFromUrl(
+              builder: (_) =>
+                  PDFViewerCachedFromUrl(
                     url: RorCardModel.rorUrl5,
                   )),
         );
@@ -421,14 +585,23 @@ class RorCard extends StatelessWidget {
                   image: NetworkImage(this.model.imageUrl),
                 ),
               ),
-              width: MediaQuery.of(context).size.width * 0.3,
-              height: MediaQuery.of(context).size.height * 0.22,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.3,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height * 0.22,
             ),
             Padding(
               padding: EdgeInsets.all(2),
             ),
             Container(
-              width: MediaQuery.of(context).size.width * 0.3,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.3,
               child: Text(
                 this.model.title,
                 style: Styles.textDescriptiveItems.copyWith(fontSize: 16),
@@ -457,41 +630,62 @@ class PlaceHolderHome extends StatelessWidget {
           Padding(padding: EdgeInsets.all(8)),
           Container(
             height: 30,
-            width: MediaQuery.of(context).size.width * 0.6,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.6,
             color: Styles.colorPlaceHolderBackground,
           ),
           Padding(padding: EdgeInsets.all(16)),
           Container(
             height: 20,
-            width: MediaQuery.of(context).size.width * 0.4,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.4,
             color: Styles.colorPlaceHolderBackground,
           ),
           Padding(padding: EdgeInsets.all(8)),
           Container(
             color: Styles.colorPlaceHolderBackground,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.3,
           ),
           Padding(padding: EdgeInsets.all(16)),
           Container(
             height: 20,
-            width: MediaQuery.of(context).size.width * 0.4,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.4,
             color: Styles.colorPlaceHolderBackground,
           ),
           Padding(padding: EdgeInsets.all(8)),
           Container(
             color: Styles.colorPlaceHolderBackground,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.3,
           ),
           Padding(padding: EdgeInsets.all(16)),
           Container(
             height: 20,
-            width: MediaQuery.of(context).size.width * 0.4,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.4,
             color: Styles.colorPlaceHolderBackground,
           ),
           Padding(padding: EdgeInsets.all(8)),
           Container(
             color: Styles.colorPlaceHolderBackground,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.3,
           ),
         ],
       ),

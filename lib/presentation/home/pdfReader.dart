@@ -46,14 +46,82 @@ class PDFViewerCachedFromUrl extends StatelessWidget {
               icon: Icon(CupertinoIcons.share),
               onPressed: () {
                 showDialog(
+                  barrierColor: Styles.colorSecondary.withOpacity(0.4),
                     context: context,
+
                     builder: (BuildContext context) {
                       return new AlertDialog(
-
-                        content: Container(
-                          width: MediaQuery.of(context).size.width,
-                         child: Text('Distribution'),
-
+                        backgroundColor: Styles.colorSecondaryLight,
+                        content: Stack(
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height*0.7,
+                              child: ListView(
+                                children: [
+                                  Text('Distribution', style: Styles.textRegularMedium,),
+                            Padding(padding: EdgeInsets.all(4)),
+                                  Text('Select contacts to distribute Rhapsody to'),
+                                  Padding(padding: EdgeInsets.all(8)),
+                                  CheckboxListTile(
+                                      value: false, onChanged: (bool) {},
+                                  title: Text('Charles Brown Tinashe'),
+                                  subtitle: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Charles.t.brown@gmail.com'),
+                                      Text('English'),
+                                    ],
+                                  ),),
+                                  Padding(padding: EdgeInsets.all(2)),
+                                   CheckboxListTile(
+                                      value: false, onChanged: (bool) {},
+                                  title: Text('Johonny deep'),
+                                  subtitle: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text('jhdeep@gmail.com'),
+                                      Text('English'),
+                                    ],
+                                  ),),
+                                  Padding(padding: EdgeInsets.all(2)),
+                                   CheckboxListTile(
+                                      value: false, onChanged: (bool) {},
+                                  title: Text('John Tinashe'),
+                                  subtitle: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text('John.brown@gmail.com'),
+                                      Text('French'),
+                                    ],
+                                  ),),
+                                  Padding(padding: EdgeInsets.all(2)),
+                                  CheckboxListTile(
+                                    value: false,
+                                    onChanged: (bool) {},
+                                    title: Text('Micheal Tango'),
+                                    subtitle: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Charles.t.brown@gmail.com'),
+                                        Text('Agui'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                                bottom:10,
+                                right:10,
+                                child: FloatingActionButton(
+                                 backgroundColor: Styles.colorPrimary,
+                                    tooltip:'Distribute',onPressed: (){}, child: Icon(Icons.check)))
+                          ],
                         ),
                       );
                     });
@@ -67,9 +135,9 @@ class PDFViewerCachedFromUrl extends StatelessWidget {
           ),
         ),
       ),
-      body: //const PDF().cachedFromUrl(
-          Center(
-        child: PDF().fromUrl(
+      body: Center(
+        child: //const PDF().cachedFromUrl(
+          PDF().fromUrl(
           url,
           placeholder: (double progress) => Stack(
             children: [

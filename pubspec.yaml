@@ -66,6 +66,7 @@ flutter:
     - assets/rorImages/
     - assets/emptyStates/
     - assets/rive/
+    - assets/json/
 
   #   - images/a_dot_ham.jpeg
 

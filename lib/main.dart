@@ -5,6 +5,7 @@ import 'package:MyRhapsody/presentation/launchPages/splashPage.dart';
 import 'package:MyRhapsody/repositories/blocs/authenticationBloc/authentication_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signInBloc/signinbloc_bloc.dart';
 import 'package:MyRhapsody/repositories/blocs/signUpBloc/signupbloc_bloc.dart';
+import 'package:MyRhapsody/repositories/models/LanguageModel/bloc/language_bloc.dart';
 import 'package:MyRhapsody/theme/styles.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,9 @@ void main() async {
             create: (_) => SignInBloc(),
             // child: FirstView(),
           ),
+          BlocProvider<LanguageBloc>(create: (_) => LanguageBloc()..add(LoadLanguages())
+              // child: FirstView(),
+              ),
 
           BlocProvider<SignUpBloc>(
             create: (_) => SignUpBloc(),
